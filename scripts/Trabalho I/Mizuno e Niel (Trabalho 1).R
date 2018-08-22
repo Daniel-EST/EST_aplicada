@@ -2,13 +2,13 @@
 require(readxl) ; require(dplyr) ; require(readr) ; require(ggplot2)
 
 # Diretório ###
-setwd("/home/216054054/Área de trabalho/Trabalho 1")
+getwd()
 dir()
 
 # Tratar base ###
 # Leitura ###
-dadosM <- read_xls("Perfil Homens e Mulheres - Bancos.xls", sheet = "homens")
-dadosF <- read_xls("Perfil Homens e Mulheres - Bancos.xls", sheet = "mulheres")
+dadosM <- read_xls("bd\\Trabalho I\\Perfil Homens e Mulheres - Bancos.xls", sheet = "homens")
+dadosF <- read_xls("bd\\Trabalho I\\Perfil Homens e Mulheres - Bancos.xls", sheet = "mulheres")
 
 dadosM$sexo <- 1
 dadosF$sexo <- 0
@@ -19,7 +19,6 @@ dados <- dados %>%
 rm(list = c("dadosM","dadosF"))
 
 # Usar fatores ###
-class(dados$sexo)
 dados$sexo <- factor(dados$sexo, labels = c("f","m"))
 dados$estciv <- factor(dados$estciv, labels = c("casado","solteiro","viuvo", "outros"))
 dados$possuibem <- factor(dados$possuibem, labels = c("s","n"))
