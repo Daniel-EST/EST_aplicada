@@ -60,13 +60,3 @@ table(dados$sexo, dados$satisflimite) %>% prop.table()
 table(dados$sexo, dados$maisdeumban) %>% prop.table()
 table(dados$sexo, dados$previdencia) %>% prop.table()
 table(dados$sexo, dados$seguro) %>% prop.table()
- 
-
-
-
-
-
-
-
-
-
