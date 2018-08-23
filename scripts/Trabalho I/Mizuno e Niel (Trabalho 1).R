@@ -69,6 +69,7 @@ t.test(dados$idade[dados$sexo=="f"],dados$idade[dados$sexo=="m"],var.equal=FALSE
 #Idade
 hist(dados$idade,xlab="Idade",ylab="Porcentagem",freq=FALSE,
      main="Histograma da idade")
+ggplot(dados,aes(x=sexo,y=idade))+geom_boxplot()
 curve(dnorm(x,mean(dados$idade),sd(dados$idade)),add=T)
 
 par(mfrow = c(1,2))
@@ -76,8 +77,11 @@ par(mfrow = c(1,2))
 hist(dados$idade[dados$sexo=="f"],xlab="Idade",ylab="Porcentagem"
      ,freq=FALSE,main="Histograma da idade do sexo feminino",ylim = c(0, 0.15))
 curve(dnorm(x,mean(dados$idade[dados$sexo=="f"]),sd(dados$idade[dados$sexo=="m"])),add=T)
+
 #Idade do sexo masculino
 hist(dados$idade[dados$sexo=="m"],xlab="Idade",ylab="Porcentagem",freq=FALSE,
      main="Histograma da idade do sexo masculino",ylim = c(0, 0.15))
 curve(dnorm(x,mean(dados$idade[dados$sexo=="m"]),sd(dados$idade[dados$sexo=="m"])),add=T)
 par(mfrow = c(1,1))
+
+#Fazer descritivas do número de dependentes por sexo#####

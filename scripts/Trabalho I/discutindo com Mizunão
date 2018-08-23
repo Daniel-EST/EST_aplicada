@@ -2,11 +2,12 @@ Bankline - IGNORAR (Todos possuem bankline)
 
 Vamos usar um nível de significância
 Mexer no eixo X do histograma do grafico Idade x Sexo
+Fonte -> UTF-8
 
 Pergunta 1
 
 Fazer descritivas da idade por sexo
-Fazer teste da diferença de médias da idade por sexo (fazer todos os testes: normalidade, variância)
+Fazer teste da diferença de médias da idade por sexo (fazer todos os testes: normalidade, variância)  (OK)
 
 Fazer descritivas do num de dependentes por sexo
 Fazer teste da diferença de médias do num de dependentes por sexo (fazer todos os testes: normalidade, variância)
