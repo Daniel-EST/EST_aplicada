@@ -39,3 +39,42 @@ dados$satisflimite <- factor(dados$satisflimite, labels = c("s","n"))
 dados$maisdeumban <- factor(dados$maisdeumban, labels = c("s","n"))
 dados$previdencia <- factor(dados$previdencia, labels = c("s","n"))
 dados$seguro <- factor(dados$seguro, labels = c("s","n"))
+
+#Fazer descritivas da idade por sexo#####
+
+#TH para normalidade de dados$sexo=="f"
+dados$idade[dados$sexo=="f"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
+                                         ,sd=sd(.))
+#P-valor>Alfa nao rejeito Ho
+qqnorm(dados$idade[dados$sexo=="f"])
+qqline(dados$idade[dados$sexo=="f"])
+
+#TH para normalidade de dados$sexo=="m"
+dados$idade[dados$sexo=="m"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
+                                         ,sd=sd(.))
+#P-valor>Alfa nao rejeito Ho
+qqnorm(dados$idade[dados$sexo=="m"])
+qqline(dados$idade[dados$sexo=="m"])
+
+#TH para igualdade de variancias
+var.test(dados$idade[dados$sexo=="f"],dados$idade[dados$sexo=="m"],ratio=1,
+         alternative ="two.sided")
+
+#TH para media
+t.test(dados$idade[dados$sexo=="f"],dados$idade[dados$sexo=="m"],var.equal=FALSE,
+       alternative ="two.sided")
+
+#Fazendo grafico
+
+#Idade
+hist(dados$idade,xlab="Idade",ylab="Porcentagem",freq=FALSE,
+     main="Histograma da idade")
+
+#Idade do sexo feminino
+hist(dados$idade[dados$sexo=="f"],xlab="Idade",ylab="Porcentagem"
+     ,freq=FALSE,main="Histograma da idade do sexo feminino",ylim = c(0, 0.15))
+
+#Idade do sexo masculino
+hist(dados$idade[dados$sexo=="m"],xlab="Idade",ylab="Porcentagem",freq=FALSE,
+     main="Histograma da idade do sexo masculino",ylim = c(0, 0.15))
+
