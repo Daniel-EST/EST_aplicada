@@ -40,6 +40,8 @@ dados$maisdeumban <- factor(dados$maisdeumban, labels = c("s","n"))
 dados$previdencia <- factor(dados$previdencia, labels = c("s","n"))
 dados$seguro <- factor(dados$seguro, labels = c("s","n"))
 
+ggplot(dados,aes(x=banco))+geom_bar(fill="blue")+ylab("Frequência")+xlab("Bancos")
+
 #Fazer descritivas da idade por sexo#####
 
 #TH para normalidade de dados$sexo=="f"
@@ -117,7 +119,7 @@ sjt.xtab(dados$sexo,dados$serasa,show.summary=F,var.labels = c("Sexo","Possui no
 #Fazendo teste do chi-quadrado
 m <- matrix(c(56,37,34,63),nrow=2,ncol=2)
 chisq.test(m,correct=F)
-ggplot(dados,aes(x=serasa))+geom_bar(aes(fill=sexo))
+ggplot(dados,aes(x=serasa))+geom_bar(aes(fill=sexo))+ylab("Frequência")+xlab("Possui nome no SERASA")
 
 #Fazer descritivas do estado civil por sexo####
 sjt.xtab(dados$sexo,dados$estciv,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
@@ -128,4 +130,4 @@ sjt.xtab(dados$sexo,dados$estciv,show.summary=F,var.labels = c("Sexo","Possui no
 m <- matrix(c(23,34,31,28,23,15,13,23),nrow=2,ncol=2)
 chisq.test(m,correct=F)
 
-ggplot(dados,aes(x=estciv))+geom_bar(aes(fill=sexo))
+ggplot(dados,aes(x=estciv))+geom_bar(aes(fill=sexo))+ylab("Frequência")+xlab("Estado Civil")
