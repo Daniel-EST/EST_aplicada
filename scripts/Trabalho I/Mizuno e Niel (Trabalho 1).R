@@ -131,3 +131,29 @@ m <- matrix(c(23,34,31,28,23,15,13,23),nrow=2,ncol=2)
 chisq.test(m,correct=F)
 
 ggplot(dados,aes(x=estciv))+geom_bar(aes(fill=sexo))+ylab("Frequência")+xlab("Estado Civil")
+
+#Fazer descritivas da idade por satisfacão#####
+
+#TH para normalidade de dados$satisflimite=="s"
+dados$idade[dados$satisflimite=="s"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
+                                         ,sd=sd(.))
+#P-valor>Alfa nao rejeito Ho
+qqnorm(dados$idade[dados$satisflimite=="s"])
+qqline(dados$idade[dados$satisflimite=="s"])
+
+#TH para normalidade de dados$sexo=="m"
+dados$idade[dados$satisflimite=="n"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
+                                         ,sd=sd(.))
+#P-valor>Alfa nao rejeito Ho
+qqnorm(dados$idade[dados$satisflimite=="n"])
+qqline(dados$idade[dados$satisflimite=="n"])
+
+#TH para igualdade de variancias
+var.test(dados$idade[dados$satisflimite=="s"],dados$idade[dados$satisflimite=="n"],ratio=1,
+         alternative ="two.sided")
+
+#TH para media
+t.test(dados$idade[dados$satisflimite=="s"],dados$idade[dados$satisflimite=="n"],var.equal=FALSE,
+       alternative ="two.sided")
+
+#Fazendo grafico
