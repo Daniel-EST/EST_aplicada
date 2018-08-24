@@ -158,7 +158,6 @@ t.test(dados$idade[dados$satisflimite=="s"],dados$idade[dados$satisflimite=="n"]
 
 #Fazendo grafico
 
-
 serasa_sexo <- table(dados$serasa,dados$sexo)
 
 # Nomeando colunas  e linhas (respectivamente)
