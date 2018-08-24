@@ -158,10 +158,8 @@ t.test(dados$idade[dados$satisflimite=="s"],dados$idade[dados$satisflimite=="n"]
 
 #Fazendo grafico
 
-# Retirei o grupo de controle pois eles não possuem trauma.
 
-
-sexo_serasa <- table(dados$serasa,dados$sexo)
+serasa_sexo <- table(dados$serasa,dados$sexo)
 
 # Nomeando colunas  e linhas (respectivamente)
 colnames(serasa_sexo) <- c("Feminino", "Masculino")
