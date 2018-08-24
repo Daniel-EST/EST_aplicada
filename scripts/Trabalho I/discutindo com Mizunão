@@ -1,8 +1,9 @@
 Bankline - IGNORAR (Todos possuem bankline)
 
-Vamos usar um nível de significância
-Mexer no eixo X do histograma do grafico Idade x Sexo
+Vamos usar qual nível de significância?
+Mexer no eixo X do histograma do gráfico Idade x Sexo
 Fonte -> UTF-8
+Discutir tabela e quais gráficos fazer do SERASA e Estado Civil
 
 Pergunta 1
 
@@ -10,13 +11,13 @@ Fazer descritivas da idade por sexo
 Fazer teste da diferença de médias da idade por sexo (fazer todos os testes: normalidade, variância)  (OK)
 
 Fazer descritivas do num de dependentes por sexo
-Fazer teste da diferença de médias do num de dependentes por sexo (fazer todos os testes: normalidade, variância)
+Fazer teste da diferença de médias do num de dependentes por sexo (fazer todos os testes: normalidade, variância) (DEU RUIM)
 
 Fazer descritivas do estado civil por sexo
-Fazer teste do estado civil qui-quadrado por sexo
+Fazer teste do estado civil qui-quadrado por sexo (OK)
 
 Fazer descritivas do SERASA por sexo
-Fazer teste do SERASA qui-quadrado por sexo
+Fazer teste do SERASA qui-quadrado por sexo (OK)
 
 Pergunta 2
 
@@ -35,6 +36,8 @@ Fazer teste do qui-quadrado do  uso por satisfação
 
 Fazer descritivas do gerente por satisfação.
 Fazer teste do qui-quadrado gerente por satisfação
+
+.................................................................................................................................
 
 https://www.techtudo.com.br/dicas-e-tutoriais/noticia/2013/10/como-instalar-aplicativos-de-fora-da-mac-app-store-no-os-x-mavericks.html
 

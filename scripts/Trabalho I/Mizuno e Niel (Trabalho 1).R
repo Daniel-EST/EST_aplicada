@@ -1,5 +1,5 @@
 # Pacotes ####
-require(readxl) ; require(dplyr) ; require(readr) ; require(ggplot2)
+require(readxl) ; require(dplyr) ; require(readr) ; require(ggplot2) ; library(sjPlot)
 
 # Diretório ###
 getwd()
@@ -84,4 +84,48 @@ hist(dados$idade[dados$sexo=="m"],xlab="Idade",ylab="Porcentagem",freq=FALSE,
 curve(dnorm(x,mean(dados$idade[dados$sexo=="m"]),sd(dados$idade[dados$sexo=="m"])),add=T)
 par(mfrow = c(1,1))
 
-#Fazer descritivas do número de dependentes por sexo#####
+#Fazer descritivas do número de dependentes por sexo (DEU RUIM)#####
+
+#TH para normalidade de dados$sexo=="f"
+dados$numdep[dados$sexo=="f"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
+                                         ,sd=sd(.))
+#P-valor<Alfa rejeito Ho (O Q FAZER)
+qqnorm(dados$numdep[dados$sexo=="f"])
+qqline(dados$numdep[dados$sexo=="f"])
+
+#TH para normalidade de dados$sexo=="m"
+dados$numdep[dados$sexo=="m"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
+                                         ,sd=sd(.))
+#P-valor<Alfa rejeito Ho (O Q FAZER)
+qqnorm(dados$numdep[dados$sexo=="m"])
+qqline(dados$numdep[dados$sexo=="m"])
+
+#TH para igualdade de variancias
+var.test(dados$numdep[dados$sexo=="f"],dados$numdep[dados$sexo=="m"],ratio=1,
+         alternative ="two.sided")
+
+#TH para media
+t.test(dados$numdep[dados$sexo=="f"],dados$numdep[dados$sexo=="m"],var.equal=FALSE,
+       alternative ="two.sided")
+
+#Fazer descritivas do SERASA por sexo####
+sjt.xtab(dados$sexo,dados$serasa,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
+         ,show.cell.prc = T)
+sjt.xtab(dados$sexo,dados$serasa,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
+         ,show.col.prc = T)
+
+#Fazendo teste do chi-quadrado
+m <- matrix(c(56,37,34,63),nrow=2,ncol=2)
+chisq.test(m,correct=F)
+ggplot(dados,aes(x=serasa))+geom_bar(aes(fill=sexo))
+
+#Fazer descritivas do estado civil por sexo####
+sjt.xtab(dados$sexo,dados$estciv,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
+         ,show.cell.prc = T)
+sjt.xtab(dados$sexo,dados$estciv,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
+         ,show.col.prc = T)
+#Fazendo teste do chi-quadrado
+m <- matrix(c(23,34,31,28,23,15,13,23),nrow=2,ncol=2)
+chisq.test(m,correct=F)
+
+ggplot(dados,aes(x=estciv))+geom_bar(aes(fill=sexo))
