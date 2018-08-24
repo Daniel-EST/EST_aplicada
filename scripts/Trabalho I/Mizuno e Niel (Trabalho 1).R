@@ -7,8 +7,8 @@ dir()
 
 # Tratar base ###
 # Leitura ###
-dadosM <- read_xls("bd\\Trabalho I\\Perfil Homens e Mulheres - Bancos.xls", sheet = "homens")
-dadosF <- read_xls("bd\\Trabalho I\\Perfil Homens e Mulheres - Bancos.xls", sheet = "mulheres")
+dadosM <- read_xls("bd/Trabalho I/Perfil Homens e Mulheres - Bancos.xls", sheet = "homens")
+dadosF <- read_xls("bd/Trabalho I/Perfil Homens e Mulheres - Bancos.xls", sheet = "mulheres")
 
 dadosM$sexo <- 1
 dadosF$sexo <- 0
@@ -157,3 +157,36 @@ t.test(dados$idade[dados$satisflimite=="s"],dados$idade[dados$satisflimite=="n"]
        alternative ="two.sided")
 
 #Fazendo grafico
+
+# Retirei o grupo de controle pois eles não possuem trauma.
+
+
+sexo_serasa <- table(dados$serasa,dados$sexo)
+
+# Nomeando colunas  e linhas (respectivamente)
+colnames(serasa_sexo) <- c("Feminino", "Masculino")
+rownames(serasa_sexo) <- c("Sim", "Não")
+
+# Escolhendo cores
+sexo_serasa_cor <- c("#54b0f7","#ff91f7")
+
+# Calculando as proporções
+serasa_sexo <- apply(serasa_sexo, 2, function(x){x/sum(x,na.rm=T)}) ; serasa_sexo
+
+par(mar = c(5, 4, 4, 8))
+
+barplot(serasa_sexo, col=sexo_serasa_cor, 
+        border="white", 
+        xlab="Sexo", 
+        ylim = c(0,1.19),
+        ylab = "Proporção",
+        main = "Gráfico de proporção do sexo \npor Satisfação")
+legend(x = "topright", 
+       legend = c("Satisfeito", "Não satisfeito"), 
+       fill = sexo_serasa_cor, 
+       title = "Legenda",
+       xpd = TRUE,
+       inset = c(-0.40,0.30))
+
+par(mar = c(5.1, 4.1, 4.1, 2.1))
+
