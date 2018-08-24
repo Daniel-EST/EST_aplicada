@@ -1,7 +1,7 @@
 # Pacotes ####
 require(readxl) ; require(dplyr) ; require(readr) ; require(ggplot2) ; library(sjPlot)
 
-# Diretório ###
+# Diret?rio ###
 getwd()
 dir()
 
@@ -40,7 +40,7 @@ dados$maisdeumban <- factor(dados$maisdeumban, labels = c("s","n"))
 dados$previdencia <- factor(dados$previdencia, labels = c("s","n"))
 dados$seguro <- factor(dados$seguro, labels = c("s","n"))
 
-ggplot(dados,aes(x=banco))+geom_bar(fill="blue")+ylab("Frequência")+xlab("Bancos")
+ggplot(dados,aes(x=banco))+geom_bar(fill="blue")+ylab("Frequ?ncia")+xlab("Bancos")
 
 #Fazer descritivas da idade por sexo#####
 
@@ -86,18 +86,18 @@ hist(dados$idade[dados$sexo=="m"],xlab="Idade",ylab="Porcentagem",freq=FALSE,
 curve(dnorm(x,mean(dados$idade[dados$sexo=="m"]),sd(dados$idade[dados$sexo=="m"])),add=T)
 par(mfrow = c(1,1))
 
-#Fazer descritivas do número de dependentes por sexo (DEU RUIM)#####
+#Fazer descritivas do n?mero de dependentes por sexo (DEU RUIM)#####
 
 #TH para normalidade de dados$sexo=="f"
 dados$numdep[dados$sexo=="f"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
-                                         ,sd=sd(.))
+                                          ,sd=sd(.))
 #P-valor<Alfa rejeito Ho (O Q FAZER)
 qqnorm(dados$numdep[dados$sexo=="f"])
 qqline(dados$numdep[dados$sexo=="f"])
 
 #TH para normalidade de dados$sexo=="m"
 dados$numdep[dados$sexo=="m"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
-                                         ,sd=sd(.))
+                                          ,sd=sd(.))
 #P-valor<Alfa rejeito Ho (O Q FAZER)
 qqnorm(dados$numdep[dados$sexo=="m"])
 qqline(dados$numdep[dados$sexo=="m"])
@@ -119,7 +119,7 @@ sjt.xtab(dados$sexo,dados$serasa,show.summary=F,var.labels = c("Sexo","Possui no
 #Fazendo teste do chi-quadrado
 m <- matrix(c(56,37,34,63),nrow=2,ncol=2)
 chisq.test(m,correct=F)
-ggplot(dados,aes(x=serasa))+geom_bar(aes(fill=sexo))+ylab("Frequência")+xlab("Possui nome no SERASA")
+ggplot(dados,aes(x=serasa))+geom_bar(aes(fill=sexo))+ylab("Frequ?ncia")+xlab("Possui nome no SERASA")
 
 #Fazer descritivas do estado civil por sexo####
 sjt.xtab(dados$sexo,dados$estciv,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
@@ -130,20 +130,20 @@ sjt.xtab(dados$sexo,dados$estciv,show.summary=F,var.labels = c("Sexo","Possui no
 m <- matrix(c(23,34,31,28,23,15,13,23),nrow=2,ncol=2)
 chisq.test(m,correct=F)
 
-ggplot(dados,aes(x=estciv))+geom_bar(aes(fill=sexo))+ylab("Frequência")+xlab("Estado Civil")
+ggplot(dados,aes(x=estciv))+geom_bar(aes(fill=sexo))+ylab("Frequ?ncia")+xlab("Estado Civil")
 
-#Fazer descritivas da idade por satisfacão#####
+#Fazer descritivas da idade por satisfac?o#####
 
 #TH para normalidade de dados$satisflimite=="s"
 dados$idade[dados$satisflimite=="s"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
-                                         ,sd=sd(.))
+                                                 ,sd=sd(.))
 #P-valor>Alfa nao rejeito Ho
 qqnorm(dados$idade[dados$satisflimite=="s"])
 qqline(dados$idade[dados$satisflimite=="s"])
 
 #TH para normalidade de dados$sexo=="m"
 dados$idade[dados$satisflimite=="n"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
-                                         ,sd=sd(.))
+                                                 ,sd=sd(.))
 #P-valor>Alfa nao rejeito Ho
 qqnorm(dados$idade[dados$satisflimite=="n"])
 qqline(dados$idade[dados$satisflimite=="n"])
@@ -188,3 +188,68 @@ legend(x = "topright",
 
 par(mar = c(5.1, 4.1, 4.1, 2.1))
 
+#Fazer descritivas do satisfacao por serasa####
+sjt.xtab(dados$satisflimite,dados$serasa,show.summary=F,var.labels = c("Satisfeito com limite?","Possui nome no SERASA")
+         ,show.row.prc = T)
+sjt.xtab(dados$satisflimite,dados$serasa,show.summary=F,var.labels = c("Satisfeito com limite?","Possui nome no SERASA")
+         ,show.col.prc = T)
+
+#Fazendo teste do chi-quadrado
+m <- matrix(c(23,70,28,69),nrow=2,ncol=2)
+chisq.test(m,correct=F)
+ggplot(dados,aes(x=satisflimite))+geom_bar(aes(fill=serasa))+ylab("Frequ?ncia")+
+  xlab("Possui nome no SERASA")
+
+#TH para prop (COMO FAZER)
+
+#Fazer descritivas do satifacao por banco####
+sjt.xtab(dados$satisflimite,dados$banco,show.summary=F,var.labels = c("Satisfeito com limite?","Banco")
+         ,show.row.prc = T)
+sjt.xtab(dados$satisflimite,dados$banco,show.summary=F,var.labels = c("Satisfeito com limite?","Banco")
+         ,show.col.prc = T)
+
+#Fazendo teste do chi-quadrado
+m <- matrix(c(17,36,16,43,2,8,8,10,4,10,4,32),nrow=2,ncol=6)
+chisq.test(m,correct=F)
+ggplot(dados,aes(x=satisflimite))+geom_bar(aes(fill=serasa))+ylab("Frequ?ncia")+
+  xlab("Possui nome no SERASA")
+
+#Fazer descritivas do satifacao por tempo####
+
+#TH para normalidade de dados$satisflimite=="s"
+dados$tempocliente[dados$satisflimite=="s"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
+                                                        ,sd=sd(.))
+
+#P-valor<Alfa rejeito Ho (FALAR COM LUDMILLA)
+qqnorm(dados$tempocliente[dados$satisflimite=="s"])
+qqline(dados$tempocliente[dados$satisflimite=="s"])
+
+#TH para normalidade de dados$satisflimite=="n"
+dados$tempocliente[dados$satisflimite=="n"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
+                                                        ,sd=sd(.))
+
+#P-valor>Alfa nao rejeito Ho
+qqnorm(dados$tempocliente[dados$satisflimite=="n"])
+qqline(dados$tempocliente[dados$satisflimite=="n"])
+
+#TH para igualdade de variancias
+var.test(dados$tempocliente[dados$satisflimite=="n"],dados$tempocliente[dados$satisflimite=="s"],ratio=1,
+         alternative ="two.sided")
+
+#TH para media
+t.test(dados$tempocliente[dados$satisflimite=="n"],dados$tempocliente[dados$satisflimite=="s"],
+       var.equal=TRUE,alternative ="two.sided")
+
+
+
+#Fazer descritivas do gerente por satisfa??o####
+sjt.xtab(dados$gerente,dados$satisflimite,show.summary=F,var.labels = c("Falou com gerente","Satisfeito com limite?")
+         ,show.row.prc = T)
+sjt.xtab(dados$gerente,dados$satisflimite,show.summary=F,var.labels = c("Falou com gerente","Satisfeito com limite?")
+         ,show.col.prc = T)
+
+#Fazendo teste do chi-quadrado
+m <- matrix(c(23,28,79,60),nrow=2,ncol=2)
+chisq.test(m,correct=F)
+ggplot(dados,aes(x=satisflimite))+geom_bar(aes(fill=gerente))+ylab("Frequ?ncia")+
+  xlab("Possui nome no SERASA")
