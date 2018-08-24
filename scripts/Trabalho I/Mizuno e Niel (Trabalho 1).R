@@ -112,7 +112,7 @@ t.test(dados$numdep[dados$sexo=="f"],dados$numdep[dados$sexo=="m"],var.equal=FAL
 
 #Fazer descritivas do SERASA por sexo####
 sjt.xtab(dados$sexo,dados$serasa,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
-         ,show.cell.prc = T)
+         ,show.row.prc = T)
 sjt.xtab(dados$sexo,dados$serasa,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
          ,show.col.prc = T)
 
@@ -123,7 +123,7 @@ ggplot(dados,aes(x=serasa))+geom_bar(aes(fill=sexo))+ylab("Frequência")+xlab("P
 
 #Fazer descritivas do estado civil por sexo####
 sjt.xtab(dados$sexo,dados$estciv,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
-         ,show.cell.prc = T)
+         ,show.row.prc = T)
 sjt.xtab(dados$sexo,dados$estciv,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
          ,show.col.prc = T)
 #Fazendo teste do chi-quadrado
