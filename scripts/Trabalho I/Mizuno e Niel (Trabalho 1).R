@@ -42,6 +42,9 @@ dados$seguro <- factor(dados$seguro, labels = c("s","n"))
 
 ggplot(dados,aes(x=banco))+geom_bar(fill="blue")+ylab("Frequ?ncia")+xlab("Bancos")
 
+
+#PERGUNTA 1
+
 #Fazer descritivas da idade por sexo#####
 
 #TH para normalidade de dados$sexo=="f"
@@ -194,6 +197,9 @@ legend(x = "topright",
        inset = c(-0.40,0.30))
 
 par(mar = c(5.1, 4.1, 4.1, 2.1))
+
+#PERGUNTA 2
+
 #Fazer descritivas da idade por satisfac?o#####
 
 #TH para normalidade de dados$satisflimite=="s"
@@ -299,7 +305,7 @@ barplot(gerente_satis, col=gerente_satis_cor,
         xlab="Sexo", 
         ylim = c(0,1.19),
         ylab = "Proporção",
-        main = "Falou com gerente por sexo")
+        main = "Falou com gerente por satisfacão com limite")
 legend(list(x=2.3,y=0), 
        legend = c("Usou gerente", "Não usou gerente"), 
        fill = sexo_serasa_cor, 
