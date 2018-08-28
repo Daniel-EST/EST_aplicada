@@ -11,7 +11,7 @@ Fazer descritivas da idade por sexo
 Fazer teste da diferença de médias da idade por sexo (fazer todos os testes: normalidade, variância)  (OK)
 
 Fazer descritivas do num de dependentes por sexo
-Fazer teste da diferença de médias do num de dependentes por sexo (fazer todos os testes: normalidade, variância) (DEU RUIM)
+Fazer teste da diferença de médias do num de dependentes por sexo (fazer todos os testes: normalidade, variância) (DEU RUIM) * supondo normalidade assintótica.
 
 Fazer descritivas do estado civil por sexo
 Fazer teste do estado civil qui-quadrado por sexo (OK)
@@ -29,7 +29,7 @@ Fazer teste do SERASA qui-quadrado por satisfação (PARAMOS NO MEIO)
 Fazer descritivas do banco por satisfação
 Fazer teste do banco qui-quadrado por satisfação (OK)
 
-Fazer descritiva do tempo que é cliente por satisfação e os devidos testes. Fazer teste da diferença de médias do tempo que é cliente por satisfação (fazer todos os testes: normalidade, variância) (FALAR COM LUDMILLA)
+Fazer descritiva do tempo que é cliente por satisfação e os devidos testes. Fazer teste da diferença de médias do tempo que é cliente por satisfação (fazer todos os testes: normalidade, variância) (FALAR COM LUDMILLA) *supondo normalidade assintótica
 
 Fazer descritivas do uso por satisfação
 Fazer teste do qui-quadrado do  uso por satisfação (OK)
@@ -44,4 +44,3 @@ https://www.techtudo.com.br/dicas-e-tutoriais/noticia/2013/10/como-instalar-apli
 https://www.techtudo.com.br/dicas-e-tutoriais/noticia/2013/10/como-instalar-aplicativos-de-fora-da-mac-app-store-no-os-x-mavericks.html
 
 .................................................................................................................................
-

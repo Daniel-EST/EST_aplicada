@@ -40,7 +40,8 @@ dados$maisdeumban <- factor(dados$maisdeumban, labels = c("s","n"))
 dados$previdencia <- factor(dados$previdencia, labels = c("s","n"))
 dados$seguro <- factor(dados$seguro, labels = c("s","n"))
 
-ggplot(dados,aes(x=banco))+geom_bar(fill="blue")+ylab("Frequ?ncia")+xlab("Bancos")
+ggplot(dados,aes(x=banco))+geom_bar(aes(fill=banco))+ylab("Frequência")+xlab("Bancos")+
+  theme(legend.position = "none")
 
 
 #PERGUNTA 1
@@ -51,14 +52,15 @@ ggplot(dados,aes(x=banco))+geom_bar(fill="blue")+ylab("Frequ?ncia")+xlab("Bancos
 dados$idade[dados$sexo=="f"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                                          ,sd=sd(.))
 #P-valor>Alfa nao rejeito Ho
-qqnorm(dados$idade[dados$sexo=="f"])
+par(mfrow = c(1,2))
+qqnorm(dados$idade[dados$sexo=="f"], main = "Q-Q Plot \nIdade feminino", sub = "Verificando normalidade", col = "red")
 qqline(dados$idade[dados$sexo=="f"])
 
 #TH para normalidade de dados$sexo=="m"
 dados$idade[dados$sexo=="m"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                                          ,sd=sd(.))
 #P-valor>Alfa nao rejeito Ho
-qqnorm(dados$idade[dados$sexo=="m"])
+qqnorm(dados$idade[dados$sexo=="m"], main = "Q-Q Plot \nIdade masculino", sub = "Verificando normalidade", col = "red")
 qqline(dados$idade[dados$sexo=="m"])
 
 #TH para igualdade de variancias
@@ -74,11 +76,15 @@ t.test(dados$idade[dados$sexo=="f"],dados$idade[dados$sexo=="m"],var.equal=FALSE
 #Idade
 hist(dados$idade,xlab="Idade",ylab="Porcentagem",freq=FALSE,
      main="Histograma da idade")
-ggplot(dados,aes(x=sexo,y=idade))+geom_boxplot()
 curve(dnorm(x,mean(dados$idade),sd(dados$idade)),add=T)
 
-par(mfrow = c(1,2))
+# Boxplot da idade por sexo
+ggplot(dados,aes(x=sexo,y=idade))+geom_boxplot()
+
+
 #Idade do sexo feminino
+
+par(mfrow=c(1,2))
 hist(dados$idade[dados$sexo=="f"],xlab="Idade",ylab="Porcentagem"
      ,freq=FALSE,main="Histograma da idade do sexo feminino",ylim = c(0, 0.15))
 curve(dnorm(x,mean(dados$idade[dados$sexo=="f"]),sd(dados$idade[dados$sexo=="m"])),add=T)
@@ -122,7 +128,6 @@ sjt.xtab(dados$sexo,dados$serasa,show.summary=F,var.labels = c("Sexo","Possui no
 #Fazendo teste do chi-quadrado
 m <- matrix(c(56,37,34,63),nrow=2,ncol=2)
 chisq.test(m,correct=F)
-ggplot(dados,aes(x=serasa))+geom_bar(aes(fill=sexo))+ylab("Frequência")+xlab("Possui nome no SERASA")
 
 #Fazendo grafico
 
@@ -165,8 +170,6 @@ sjt.xtab(dados$sexo,dados$estciv,show.summary=F,var.labels = c("Sexo","Possui no
 m <- matrix(c(23,34,31,28,23,15,13,23),nrow=2,ncol=2)
 chisq.test(m,correct=F)
 
-ggplot(dados,aes(x=estciv))+geom_bar(aes(fill=sexo))+ylab("Frequ?ncia")+xlab("Estado Civil")
-
 #Fazendo grafico
 
 estciv_sexo <- table(dados$estciv,dados$sexo)
@@ -176,7 +179,7 @@ colnames(estciv_sexo) <- c("Feminino", "Masculino")
 rownames(estciv_sexo) <- c("Casado", "Solteiro","Viuvo","Outros")
 
 # Escolhendo cores
-estciv_sexo_cor <- c("#54b0f7","#ff91f7","red","green")
+estciv_sexo_cor <- RColorBrewer::brewer.pal(4, "Set2")
 
 # Calculando as proporções
 estciv_sexo <- apply(estciv_sexo, 2, function(x){x/sum(x,na.rm=T)}) ; estciv_sexo
@@ -191,7 +194,7 @@ barplot(estciv_sexo, col=estciv_sexo_cor,
         main = "Estado civil por sexo")
 legend(x = "topright", 
        legend = c("Casado", "Solteiro","Viuvo","Outros"), 
-       fill = sexo_serasa_cor, 
+       fill = estciv_sexo_cor, 
        title = "Legenda",
        xpd = TRUE,
        inset = c(-0.40,0.30))
@@ -206,14 +209,16 @@ par(mar = c(5.1, 4.1, 4.1, 2.1))
 dados$idade[dados$satisflimite=="s"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                                                  ,sd=sd(.))
 #P-valor>Alfa nao rejeito Ho
-qqnorm(dados$idade[dados$satisflimite=="s"])
-qqline(dados$idade[dados$satisflimite=="s"])
+par(mfrow = c(1,2))
+qqnorm(dados$idade[dados$satisflimite=="s"], col = "red", main = "Q-Q Plot \nIdade x Satisfeito com o limite", sub = "Verificando normalidade")
+qqline(dados$idade[dados$satisflimite=="s"], col = "black")
+
 
 #TH para normalidade de dados$sexo=="m"
 dados$idade[dados$satisflimite=="n"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                                                  ,sd=sd(.))
 #P-valor>Alfa nao rejeito Ho
-qqnorm(dados$idade[dados$satisflimite=="n"])
+qqnorm(dados$idade[dados$satisflimite=="n"], col = "red", main = "Q-Q Plot \nIdade x Não satisfeito com o limite", sub = "Verificando normalidade")
 qqline(dados$idade[dados$satisflimite=="n"])
 
 #TH para igualdade de variancias
@@ -254,17 +259,18 @@ ggplot(dados,aes(x=satisflimite))+geom_bar(aes(fill=serasa))+ylab("Frequ?ncia")+
 dados$tempocliente[dados$satisflimite=="s"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                                                         ,sd=sd(.))
 
-#P-valor<Alfa rejeito Ho (FALAR COM LUDMILLA)
-qqnorm(dados$tempocliente[dados$satisflimite=="s"])
-qqline(dados$tempocliente[dados$satisflimite=="s"])
+# P-valor<Alfa rejeito Ho (FALAR COM LUDMILLA)
+# par(mforw = c(1,1))
+# qqnorm(dados$tempocliente[dados$satisflimite=="s"])
+# qqline(dados$tempocliente[dados$satisflimite=="s"])
 
 #TH para normalidade de dados$satisflimite=="n"
 dados$tempocliente[dados$satisflimite=="n"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                                                         ,sd=sd(.))
 
-#P-valor>Alfa nao rejeito Ho
-qqnorm(dados$tempocliente[dados$satisflimite=="n"])
-qqline(dados$tempocliente[dados$satisflimite=="n"])
+# P-valor>Alfa nao rejeito Ho
+# qqnorm(dados$tempocliente[dados$satisflimite=="n"])
+# qqline(dados$tempocliente[dados$satisflimite=="n"])
 
 #TH para igualdade de variancias
 var.test(dados$tempocliente[dados$satisflimite=="n"],dados$tempocliente[dados$satisflimite=="s"],ratio=1,
@@ -283,8 +289,6 @@ sjt.xtab(dados$gerente,dados$satisflimite,show.summary=F,var.labels = c("Falou c
 #Fazendo teste do chi-quadrado
 m <- matrix(c(23,28,79,60),nrow=2,ncol=2)
 chisq.test(m,correct=F)
-ggplot(dados,aes(x=satisflimite))+geom_bar(aes(fill=gerente))+ylab("Frequ?ncia")+
-  xlab("Possui nome no SERASA")
 
 gerente_satis <- table(dados$gerente,dados$satisflimite)
 
@@ -298,16 +302,16 @@ gerente_satis_cor <- c("#54b0f7","#ff91f7")
 # Calculando as proporções
 gerente_satis <- apply(gerente_satis, 2, function(x){x/sum(x,na.rm=T)}) ; gerente_satis
 
-par(mar = c(5, 4, 4, 8))
+par(mar = c(5, 4, 4, 8.9))
 
 barplot(gerente_satis, col=gerente_satis_cor, 
         border="white", 
         xlab="Sexo", 
         ylim = c(0,1.19),
         ylab = "Proporção",
-        main = "Falou com gerente por satisfacão com limite")
-legend(list(x=2.3,y=0), 
-       legend = c("Usou gerente", "Não usou gerente"), 
+        main = "Gerente x Sastisfação")
+legend(list(x=2.45,y=0.8), 
+       legend = c("Falou gerente", "Não falou gerente"), 
        fill = sexo_serasa_cor, 
        title = "Legenda",
        xpd = TRUE,

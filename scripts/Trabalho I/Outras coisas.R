@@ -45,7 +45,8 @@ dados$bankdepois %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
 
 #Layout 
 
-table(dados$layout)
+knitr::kable(table(dados$layout))
+
 t <- matrix(c(96,53,41))
 chisq.test(t,p=c(1/3,1/3,1/3),correct = FALSE)
 ggplot(dados,aes(dados$layout))+geom_bar()
@@ -58,22 +59,17 @@ lay <- t(table(dados$layout));lay
 # Escolhendo cores
 lay_cor <- c("#54b0f7","#ff91f7","red")
 
-# Calculando as proporções
+# Calculando as propor??es
 #Troquei para 1 pq nao estava dando certo
 lay <- apply(lay, 1, function(x){x/sum(x,na.rm=T)}) ; lay
 lay <- t(lay)
 
-par(mar = c(5, 4, 4, 8))
+par(mar = c(5.1, 4.1, 4.1, 2.1))
 
 barplot(lay, col=lay_cor, 
         border="white", 
-        xlab="Sexo", 
+        xlab="Categorias", 
         ylim = c(0,1.19),
-        ylab = "Proporção",
+        ylab = "ProporÃ§Ã£o",
         main = "Entendimento do layout")
-legend(x = "topright", 
-       legend = c("Confuso", "Indiferente","Bom"), 
-       fill = lay_cor, 
-       title = "Legenda",
-       xpd = TRUE,
-       inset = c(-0.40,0.30)) 
+
