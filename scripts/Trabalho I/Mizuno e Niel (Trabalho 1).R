@@ -121,9 +121,7 @@ t.test(dados$numdep[dados$sexo=="f"],dados$numdep[dados$sexo=="m"],var.equal=FAL
 
 #Fazer descritivas do SERASA por sexo####
 sjt.xtab(dados$sexo,dados$serasa,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
-         ,show.row.prc = T)
-sjt.xtab(dados$sexo,dados$serasa,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
-         ,show.col.prc = T)
+         ,show.row.prc = T,show.col.prc = T)
 
 #Fazendo teste do chi-quadrado
 m <- matrix(c(56,37,34,63),nrow=2,ncol=2)
@@ -162,9 +160,7 @@ par(mar = c(5.1, 4.1, 4.1, 2.1))
 
 #Fazer descritivas do estado civil por sexo####
 sjt.xtab(dados$sexo,dados$estciv,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
-         ,show.row.prc = T)
-sjt.xtab(dados$sexo,dados$estciv,show.summary=F,var.labels = c("Sexo","Possui nome no SERASA")
-         ,show.col.prc = T)
+         ,show.row.prc = T,show.col.prc = T)
 
 #Fazendo teste do chi-quadrado
 m <- matrix(c(23,34,31,28,23,15,13,23),nrow=2,ncol=2)
@@ -231,9 +227,7 @@ t.test(dados$idade[dados$satisflimite=="s"],dados$idade[dados$satisflimite=="n"]
 
 #Fazer descritivas do satisfacao por serasa####
 sjt.xtab(dados$satisflimite,dados$serasa,show.summary=F,var.labels = c("Satisfeito com limite?","Possui nome no SERASA")
-         ,show.row.prc = T)
-sjt.xtab(dados$satisflimite,dados$serasa,show.summary=F,var.labels = c("Satisfeito com limite?","Possui nome no SERASA")
-         ,show.col.prc = T)
+         ,show.row.prc = T,show.col.prc = T)
 
 #Fazendo teste do chi-quadrado
 m <- matrix(c(23,70,28,69),nrow=2,ncol=2)
@@ -282,9 +276,7 @@ t.test(dados$tempocliente[dados$satisflimite=="n"],dados$tempocliente[dados$sati
 
 #Fazer descritivas do gerente por satisfa??o####
 sjt.xtab(dados$gerente,dados$satisflimite,show.summary=F,var.labels = c("Falou com gerente","Satisfeito com limite?")
-         ,show.row.prc = T)
-sjt.xtab(dados$gerente,dados$satisflimite,show.summary=F,var.labels = c("Falou com gerente","Satisfeito com limite?")
-         ,show.col.prc = T)
+         ,show.row.prc = T,show.col.prc = T)
 
 #Fazendo teste do chi-quadrado
 m <- matrix(c(23,28,79,60),nrow=2,ncol=2)
