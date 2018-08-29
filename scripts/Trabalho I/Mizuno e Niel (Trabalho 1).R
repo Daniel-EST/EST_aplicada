@@ -43,7 +43,6 @@ dados$seguro <- factor(dados$seguro, labels = c("s","n"))
 ggplot(dados,aes(x=banco))+geom_bar(aes(fill=banco))+ylab("Frequência")+xlab("Bancos")+
   theme(legend.position = "none")
 
-
 #PERGUNTA 1
 
 #Fazer descritivas da idade por sexo#####
