@@ -21,24 +21,24 @@ rm(list = c("dadosM","dadosF"))
 # Usar fatores ###
 dados$sexo <- factor(dados$sexo, labels = c("f","m"))
 dados$estciv <- factor(dados$estciv, labels = c("casado","solteiro","viuvo", "outros"))
-dados$possuibem <- factor(dados$possuibem, labels = c("s","n"))
-dados$serasa <- factor(dados$serasa, labels = c("s","n"))
+dados$possuibem <- factor(dados$possuibem, labels = c("n","s"))
+dados$serasa <- factor(dados$serasa, labels = c("n","s"))
 dados$regproc <- factor(dados$regproc, labels = c("capital","nao-capital"))
 dados$banco <- factor(dados$banco, labels = c("bb", "itau", "bradesco", "caixa", "santander", "outros"))
 dados$bankline <- factor(dados$bankline, labels = c("s"))
-dados$cxeletro <- factor(dados$cxeletro, labels = c("s","n"))
+dados$cxeletro <- factor(dados$cxeletro, labels = c("n","s"))
 dados$layout <- factor(dados$layout, labels = c("confuso", "indiferente", "bom"))
-dados$cheque <- factor(dados$cheque, labels = c("s","n"))
-dados$poupanca <- factor(dados$poupanca, labels = c("s","n"))
-dados$cartcred <- factor(dados$cartcred, labels = c("s","n"))
-dados$fundinvest <- factor(dados$fundinvest, labels = c("s","n"))
-dados$telefone <- factor(dados$telefone, labels = c("s","n"))
-dados$gerente <- factor(dados$gerente, labels = c("s","n"))
-dados$limite <- factor(dados$limite, labels = c("s","n"))
-dados$satisflimite <- factor(dados$satisflimite, labels = c("s","n"))
-dados$maisdeumban <- factor(dados$maisdeumban, labels = c("s","n"))
-dados$previdencia <- factor(dados$previdencia, labels = c("s","n"))
-dados$seguro <- factor(dados$seguro, labels = c("s","n"))
+dados$cheque <- factor(dados$cheque, labels = c("n","s"))
+dados$poupanca <- factor(dados$poupanca, labels = c("n","s"))
+dados$cartcred <- factor(dados$cartcred, labels = c("n","s"))
+dados$fundinvest <- factor(dados$fundinvest, labels = c("n","s"))
+dados$telefone <- factor(dados$telefone, labels = c("n","s"))
+dados$gerente <- factor(dados$gerente, labels = c("n","s"))
+dados$limite <- factor(dados$limite, labels = c("n","s"))
+dados$satisflimite <- factor(dados$satisflimite, labels = c("n","s"))
+dados$maisdeumban <- factor(dados$maisdeumban, labels = c("n","s"))
+dados$previdencia <- factor(dados$previdencia, labels = c("n","s"))
+dados$seguro <- factor(dados$seguro, labels = c("n","s"))
 
 ggplot(dados,aes(x=banco))+geom_bar(aes(fill=banco))+ylab("Frequência")+xlab("Bancos")+
   theme(legend.position = "none")
@@ -100,22 +100,18 @@ par(mfrow = c(1,1))
 dados$numdep[dados$sexo=="f"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                                           ,sd=sd(.))
 #P-valor<Alfa rejeito Ho (O Q FAZER)
-qqnorm(dados$numdep[dados$sexo=="f"])
-qqline(dados$numdep[dados$sexo=="f"])
 
 #TH para normalidade de dados$sexo=="m"
 dados$numdep[dados$sexo=="m"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                                           ,sd=sd(.))
 #P-valor<Alfa rejeito Ho (O Q FAZER)
-qqnorm(dados$numdep[dados$sexo=="m"])
-qqline(dados$numdep[dados$sexo=="m"])
 
 #TH para igualdade de variancias
 var.test(dados$numdep[dados$sexo=="f"],dados$numdep[dados$sexo=="m"],ratio=1,
          alternative ="two.sided")
 
 #TH para media
-t.test(dados$numdep[dados$sexo=="f"],dados$numdep[dados$sexo=="m"],var.equal=FALSE,
+t.test(dados$numdep[dados$sexo=="f"],dados$numdep[dados$sexo=="m"],var.equal=TRUE,
        alternative ="two.sided")
 
 #Fazer descritivas do SERASA por sexo####
@@ -235,10 +231,8 @@ ggplot(dados,aes(x=satisflimite))+geom_bar(aes(fill=serasa))+ylab("Frequ?ncia")+
   xlab("Possui nome no SERASA")
 
 #Fazer descritivas do satifacao por banco####
-sjt.xtab(dados$satisflimite,dados$banco,show.summary=F,var.labels = c("Satisfeito com limite?","Banco")
-         ,show.row.prc = T)
-sjt.xtab(dados$satisflimite,dados$banco,show.summary=F,var.labels = c("Satisfeito com limite?","Banco")
-         ,show.col.prc = T)
+sjt.xtab(dados$banco,dados$satisflimite,show.summary=F,var.labels = c("Satisfeito com limite?","Banco")
+         ,show.row.prc = T,show.col.prc = T)
 
 #Fazendo teste do chi-quadrado
 m <- matrix(c(17,36,16,43,2,8,8,10,4,10,4,32),nrow=2,ncol=6)

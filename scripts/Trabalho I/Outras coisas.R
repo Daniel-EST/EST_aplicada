@@ -34,7 +34,7 @@ dados$maisdeumban <- factor(dados$maisdeumban, labels = c("s","n"))
 dados$previdencia <- factor(dados$previdencia, labels = c("s","n"))
 dados$seguro <- factor(dados$seguro, labels = c("s","n"))
 
-#Tempo de uso do bankline por semana 
+#Fazendo grafico
 
 bank = dados %>% gather(key = Curso, value = Tempo, bankantes, bankdepois) %>% select(Curso, Tempo)
 bank$Curso <- factor(bank$Curso,levels = c('bankantes',"bankdepois"),
@@ -42,12 +42,18 @@ bank$Curso <- factor(bank$Curso,levels = c('bankantes',"bankdepois"),
 
 ggplot(bank,aes(Curso,Tempo))+geom_boxplot(fill='red')
 
+#Tempo de uso do bankline por semana 
+
 dados$bankantes %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                              ,sd=sd(.))
 dados$bankdepois %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                             ,sd=sd(.))
-dados
-#Assuminme normalidade assitotica
+
+var.test(dados$bankantes,dados$bankdepois,ratio=1,alternative = "two.sided")
+
+t.test(dados$bankantes,dados$bankdepois,var.equal = FALSE,paired = TRUE,alternative = "less")
+
+#Assuminindo normalidade assitotica
 
 #Layout 
 
@@ -75,4 +81,3 @@ barplot(lay, col=lay_cor,
         ylim = c(0,1.19),
         ylab = "Proporção",
         main = "Entendimento do layout")
-
