@@ -1,4 +1,4 @@
-require(readxl) ; require(dplyr) ; require(readr) ; require(ggplot2) ; library(sjPlot)
+require(readxl) ; require(dplyr) ; require(readr) ; require(ggplot2) ; library(sjPlot) ; library(tidyr)
 
 # Diret?rio ###
 getwd()
@@ -36,20 +36,23 @@ dados$seguro <- factor(dados$seguro, labels = c("s","n"))
 
 #Tempo de uso do bankline por semana 
 
+bank = dados %>% gather(key = Curso, value = Tempo, bankantes, bankdepois) %>% select(Curso, Tempo)
+bank$Curso <- factor(bank$Curso,levels = c('bankantes',"bankdepois"),
+                     labels = c("Antes","Depois"))
+
+ggplot(bank,aes(Curso,Tempo))+geom_boxplot(fill='red')
+
 dados$bankantes %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                              ,sd=sd(.))
 dados$bankdepois %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                             ,sd=sd(.))
-
-#Nao tem distribuicao NORMAL (DEU RUIM)
+dados
+#Assuminme normalidade assitotica
 
 #Layout 
 
-knitr::kable(table(dados$layout))
-
 t <- matrix(c(96,53,41))
 chisq.test(t,p=c(1/3,1/3,1/3),correct = FALSE)
-ggplot(dados,aes(dados$layout))+geom_bar()
 
 #Fazendo grafico
 
