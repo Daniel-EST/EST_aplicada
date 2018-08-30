@@ -40,7 +40,7 @@ bank = dados %>% gather(key = Curso, value = Tempo, bankantes, bankdepois) %>% s
 bank$Curso <- factor(bank$Curso,levels = c('bankantes',"bankdepois"),
                      labels = c("Antes","Depois"))
 ggplot(dados,aes(sexo,bankantes))+geom_boxplot(fill='red')
-ggplot(dados,aes(sexo,bankdepois))+geom_boxplot(fill='red')
+ggplot(dados,aes(sexo,bankdepois))+geom_boxplot(fill='blue')
 
 ggplot(bank,aes(Curso,Tempo))+geom_boxplot(fill='red')
 
@@ -50,6 +50,8 @@ dados$bankantes %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                              ,sd=sd(.))
 dados$bankdepois %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
                             ,sd=sd(.))
+
+#Vamos supor normalidade assintotica
 
 var.test(dados$bankantes,dados$bankdepois,ratio=1,alternative = "two.sided")
 

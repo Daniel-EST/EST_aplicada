@@ -233,6 +233,38 @@ sjt.xtab(dados$satisflimite,dados$serasa,show.summary=F,var.labels = c("Satisfei
 #Fazendo teste do chi-quadrado
 m <- matrix(c(23,70,28,69),nrow=2,ncol=2)
 chisq.test(m,correct=F)
+
+#Fazendo grafico
+
+satis_serasa <- table(dados$satisflimite,dados$serasa)
+
+# Nomeando colunas  e linhas (respectivamente)
+colnames(satis_serasa) <- c("Não", "Sim")
+rownames(satis_serasa) <- c("Não", "Sim")
+
+# Escolhendo cores
+satis_serasa_cor <- c("deepskyblue","firebrick3")
+
+# Calculando as proporções
+satis_serasa <- apply(satis_serasa, 2, function(x){x/sum(x,na.rm=T)}) ; satis_serasa
+
+par(mar = c(5, 4, 4, 8))
+
+barplot(satis_serasa, col=satis_serasa_cor, 
+        border="white", 
+        xlab="Satisfeito com limite?", 
+        ylim = c(0,1.19),
+        ylab = "Proporção",
+        main = "Satisfeito com o limite")
+legend(x = "topright", 
+       legend = c("Não tem nome \nno SERASA", "Nome no \nSERASA"), 
+       fill = satis_serasa_cor, 
+       title = "Legenda",
+       xpd = TRUE,
+       inset = c(-0.75,0.30))
+
+par(mar = c(5.1, 4.1, 4.1, 2.1))
+
 ggplot(dados,aes(x=satisflimite))+geom_bar(aes(fill=serasa))+ylab("Frequ?ncia")+
   xlab("Possui nome no SERASA")
 
