@@ -39,6 +39,8 @@ dados$seguro <- factor(dados$seguro, labels = c("s","n"))
 bank = dados %>% gather(key = Curso, value = Tempo, bankantes, bankdepois) %>% select(Curso, Tempo)
 bank$Curso <- factor(bank$Curso,levels = c('bankantes',"bankdepois"),
                      labels = c("Antes","Depois"))
+ggplot(dados,aes(sexo,bankantes))+geom_boxplot(fill='red')
+ggplot(dados,aes(sexo,bankdepois))+geom_boxplot(fill='red')
 
 ggplot(bank,aes(Curso,Tempo))+geom_boxplot(fill='red')
 

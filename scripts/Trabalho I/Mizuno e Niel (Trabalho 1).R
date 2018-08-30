@@ -45,6 +45,9 @@ ggplot(dados,aes(x=banco))+geom_bar(aes(fill=banco))+ylab("Frequência")+xlab("B
 
 #PERGUNTA 1
 
+
+#PERGUNTA 1#####
+
 #Fazer descritivas da idade por sexo#####
 
 #TH para normalidade de dados$sexo=="f"
@@ -193,6 +196,9 @@ legend(x = "topright",
 par(mar = c(5.1, 4.1, 4.1, 2.1))
 
 #PERGUNTA 2
+
+
+#PERGUNTA 2######
 
 #Fazer descritivas da idade por satisfac?o#####
 
