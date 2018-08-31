@@ -42,9 +42,9 @@ dados$seguro <- factor(dados$seguro, labels = c("n","s"))
 
 ggplot(dados,aes(x=banco))+geom_bar(aes(fill=banco))+ylab("Frequência")+xlab("Bancos")+
   theme(legend.position = "none")
+summary(dados)
 
 #PERGUNTA 1
-
 
 #PERGUNTA 1#####
 
