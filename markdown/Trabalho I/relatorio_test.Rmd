@@ -65,12 +65,12 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
                 && \multicolumn{2}{c}{Masculino} & \multicolumn{2}{c}{Feminino} & \multicolumn{2}{c}{Total} \\ \cmidrule{3-9}
                 && n & \% & n & \% & n & \% & P-Valor \\ \cmidrule{3-9}
                 \multicolumn{1}{c}{\multirow{5}{*}}   &
-                \multicolumn{1}{l}{\textbf{SERASA}} &  &  &  & & &  & 0 \\ \cmidrule{1-9}
+                \multicolumn{1}{l}{\textbf{SERASA}} &  &  &  & & &  & 0.0005155 \\ \cmidrule{1-9}
                 \multicolumn{1}{c}{}    &
                 \multicolumn{1}{l}{Não} & 37 & 39.8 & 56 & 60.2 & 93 & 48.9 &  \\
                 \multicolumn{1}{c}{}    &
                 \multicolumn{1}{l}{Sim}& 63 & 64.9 & 34 & 35.1 & 97 & 51.1  \\ \cmidrule{1-9} &
-                \multicolumn{1}{l}{\textbf{Estado Civil}} &  &  &  & & &  & 0 \\ \cmidrule{1-9}                
+                \multicolumn{1}{l}{\textbf{Estado Civil}} &  &  &  & & &  & 0.1882 \\ \cmidrule{1-9}                
                 \multicolumn{1}{c}{}    &
                 \multicolumn{1}{l}{Casado} & 34 & 40.4 & 23 & 59.6 & 57 & 30 &  \\
                 \multicolumn{1}{c}{}    &   
@@ -78,7 +78,9 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
                 \multicolumn{1}{c}{}    &
                 \multicolumn{1}{l}{Viúvo} & 15 & 60.5 & 23 & 39.5 & 38 & 20   \\
                 \multicolumn{1}{c}{}    &
-                \multicolumn{1}{l}{Outros} & 23 & 36.1 & 13 & 63.9& 36 & 18.9   \\ \cmidrule{1-9}             
+                \multicolumn{1}{l}{Outros} & 23 & 36.1 & 13 & 63.9& 36 & 18.9   \\  
+                \toprule
+                \midrule 
                 & & \multicolumn{4}{c}{Satisfeito com limite}\\ \cmidrule{3-9}
                 && \multicolumn{2}{c}{Não} & \multicolumn{2}{c}{Sim} & \multicolumn{2}{c}{Total}  \\ \cmidrule{3-9}
                 && n & \% & n & \% & n & \% & P-Valor \\ \cmidrule{3-9}
@@ -111,5 +113,23 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
         \end{tabular}
         \centering
         \caption{COLOCAR DESCRIÇÃO DA TABELA AQUI!}
+        \label{table:1}
         \label{tab:sam_count}
 \end{table*}
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+    \hline
+      \textbf{Variável} & \textbf{Min} & \textbf{Max} & \textbf{1º Q} & \textbf{2º Q} & \textbf{3º Q} & \textbf{Média}  & \textbf{Desvio Padrão} \\
+      \hline
+      Idade & 20 & 42 & 28 & 30 & 32.75 & 30.37 & 4.3\\
+      Tempo de uso do Bankline antes do curso & 21 & 43 & 27 & 30 & 33.75 & 30.28 & 4.53\\
+      Tempo de uso do Bankline depois do curso & 34 & 65 & 48 & 50 & 51 & 49.92 & 3.87 \\ 
+      \hline
+    \end{tabular}
+    \caption{Tabela com algumas medidas resumo}
+     \label{table:2}
+  \end{center}
+\end{table}
+aaa \ref{table:1}
