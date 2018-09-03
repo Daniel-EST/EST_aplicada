@@ -39,20 +39,20 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
 
 ### 5.1-) Figuras:
 
-![Número de clientes por banco](Bancos.png){ width=250px }
-![Número de clientes por banco](pictograma.png){ width=250px }
+![Número de clientes por banco](Bancos.png){ width=300px } 
+![Número de clientes por banco](pictograma.png){ width=300px }
 
-![Número de clientes por banco](QQ Plot idade genero.jpeg){ width=250px }
-![Número de clientes por banco](QQplot Idade x Lim.jpeg){ width=250px }
+![Número de clientes por banco](QQ Plot idade genero.jpeg){ width=300px }
+![Número de clientes por banco](QQplot Idade x Lim.jpeg){ width=300px }
 
-![Número de clientes por banco](QQ Plot idade genero.jpeg){ width=250px }
-![Número de clientes por banco](Nome no SERASA por sexo.jpeg){ width=250px }
+![Número de clientes por banco](QQ Plot idade genero.jpeg){ width=300px }
+![Número de clientes por banco](Nome no SERASA por sexo.jpeg){ width=300px }
 
-![Número de clientes por banco](Estado civil por Sexo.jpeg){ width=250px }
-![Número de clientes por banco](Entedimento do Layout.jpeg){ width=250px }
+![Número de clientes por banco](Estado civil por Sexo.jpeg){ width=300px }
+![Número de clientes por banco](Entedimento do Layout.jpeg){ width=300px }
 
 
-** ESTA DANDO RUIM NA HORA DE COLOCAR GERENTE X ALGUMA COISA **
+\textbf{ESTA DANDO RUIM NA HORA DE COLOCAR GERENTE X ALGUMA COISA}
 
 
 ### 5.2-) Tabelas:
@@ -114,7 +114,7 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
         \end{tabular}
         \centering
         \caption{COLOCAR DESCRIÇÃO DA TABELA AQUI!}
-        \label{table:1}
+        \label{table:tab1}
         \label{tab:sam_count}
 \end{table*}
 
@@ -130,7 +130,7 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
       \hline
     \end{tabular}
     \caption{Tabela com algumas medidas resumo}
-     \label{table:2}
+     \label{table:tab2}
   \end{center}
 \end{table}
-aaa \ref{table:1}
+aaa \ref{table:tab2}
