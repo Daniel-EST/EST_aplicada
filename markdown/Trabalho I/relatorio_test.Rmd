@@ -1,6 +1,6 @@
 ---
-title: "Testando exportar para pdf mané"
-author: "Daniel dos Santos"
+title: "Trabalho de Estatística Aplicada"
+author: "Daniel dos Santos e Gabriel Mizuno"
 date: "August 25, 2018"
 output:
   pdf_document:
@@ -22,27 +22,41 @@ knitr::opts_chunk$set(echo = TRUE,
                       fig.pos = 'H')
 ```
 
-## R Markdown
+## 1-) Objetivo:
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+* Montar um perfil dos clientes segundo seu sexo.  
+* Avalar o perfil dos clientes co conta bancária em relação à satisfação com o limite de crédito desponível.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+## 2-) Metodologia:
 
-```{r cars}
-summary(cars)
-```
+Foi realizados os seguintes testes para responder os objetivos desse relatório Qui-Quadrado, Teste de Hipóteses para Média, Teste de Hipóteses para Variância e Teste de Kolmogorov-Smirnov usando um nível de significância de 10% ($\alpha$=10%). Para a análise e confecção desse relatório foram avaliadas somente algumas variáveis que foram consideradas de interesse para responder as perguntas 1 e 2. 
+	
+## 3-) Análise dos Resultados:
 
-## Including Plots
+## 4-) Conclusão:
 
-You can also embed plots, for example:
+## 5-)Apêndice:
 
-```{r pressure, echo=FALSE, fig.width=4, fig.height=3.7}
-plot(pressure)
-```
+### 5.1-) Figuras:
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.  
+![Número de clientes por banco](Bancos.png){ width=250px }
 
-\begin{table*}[t]
+![Número de clientes por banco](QQ Plot idade genero.jpeg){ width=250px }
+![Número de clientes por banco](QQplot Idade x Lim.jpeg){ width=250px }
+
+![Número de clientes por banco](QQ Plot idade genero.jpeg){ width=250px }
+![Número de clientes por banco](Nome no SERASA por sexo.jpeg){ width=250px }
+
+![Número de clientes por banco](Estado civil por Sexo.jpeg){ width=250px }
+![Número de clientes por banco](Entedimento do Layout.jpeg){ width=250px }
+
+
+** ESTA DANDO RUIM NA HORA DE COLOCAR GERENTE X ALGUMA COISA **
+
+
+### 5.2-) Tabelas:
+
+\begin{table*}[t!]
     \centering
         \begin{tabular}{c c c c c c c c c}
             \toprule
@@ -99,5 +113,3 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
         \caption{COLOCAR DESCRIÇÃO DA TABELA AQUI!}
         \label{tab:sam_count}
 \end{table*}
-
-![E AI GAY, TÁ TÃO SÉRIO PORQUÊ](hqdefault.jpg){ width=250px }
