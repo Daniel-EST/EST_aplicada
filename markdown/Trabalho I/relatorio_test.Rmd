@@ -40,6 +40,7 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
 ### 5.1-) Figuras:
 
 ![Número de clientes por banco](Bancos.png){ width=250px }
+![Número de clientes por banco](pictograma.png){ width=250px }
 
 ![Número de clientes por banco](QQ Plot idade genero.jpeg){ width=250px }
 ![Número de clientes por banco](QQplot Idade x Lim.jpeg){ width=250px }
