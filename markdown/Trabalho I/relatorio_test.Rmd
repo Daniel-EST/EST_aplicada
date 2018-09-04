@@ -33,6 +33,8 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
 	
 ## 3-) Análise dos Resultados:
 
+	Com base em nos resultados da base de dados, no nível de significância (estabelecido na seção anterior) e usando os teste e análises adequados, para cada situação, podemos concluir que a média de idade dos homens é maior do as das mulheres (p-valor=0.9989>$\alpha$), também podemos ver que 17.9%  das pessoas que possuem nome são mulheres e baseado no teste Qui-Quadrado podemos dizer que 
+
 ## 4-) Conclusão:
 
 ## 5-)Apêndice:
@@ -40,20 +42,18 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
 ### 5.1-) Figuras:
 
 ![Número de clientes por banco](Bancos.png){ width=300px } 
-![Número de clientes por banco](pictograma.png){ width=300px }
+![Quantidade de mulheres e homens](pictograma.png){ width=300px }
+
+![QQ plot da Idade por genero](QQ Plot idade genero.jpeg){ width=300px }
+![QQ plot da Idade por limite](QQplot Idade x Lim.jpeg){ width=300px }
 
 ![Número de clientes por banco](QQ Plot idade genero.jpeg){ width=300px }
-![Número de clientes por banco](QQplot Idade x Lim.jpeg){ width=300px }
+![Nome no SERASA](Nome no SERASA por sexo.jpeg){ width=300px }
 
-![Número de clientes por banco](QQ Plot idade genero.jpeg){ width=300px }
-![Número de clientes por banco](Nome no SERASA por sexo.jpeg){ width=300px }
+![Estado civil](Estado civil por Sexo.jpeg){ width=300px }
+![Compreensão do layout](Entedimento do Layout.jpeg){ width=300px }
 
-![Número de clientes por banco](Estado civil por Sexo.jpeg){ width=300px }
-![Número de clientes por banco](Entedimento do Layout.jpeg){ width=300px }
-
-![Número de clientes por banco](Gerente Satisfacao.jpeg){ width=300px }
-
-\textbf{ESTA DANDO RUIM NA HORA DE COLOCAR GERENTE X ALGUMA COISA}
+![Satisfação de quem falou com o gerente](Gerente Satisfacao.jpeg){ width=300px }
 
 
 ### 5.2-) Tabelas:
@@ -114,7 +114,7 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
                 \bottomrule
         \end{tabular}
         \centering
-        \caption{COLOCAR DESCRIÇÃO DA TABELA AQUI!}
+        \caption{Tabela de contigência com p-valor}
         \label{table:tab1}
         \label{tab:sam_count}
 \end{table*}
