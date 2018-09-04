@@ -33,7 +33,7 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
 	
 ## 3-) Análise dos Resultados:
 
-  Com base em nos resultados da base de dados, no nível de significância (estabelecido na seção anterior) e usando os teste e análises adequados, para cada situação, podemos concluir que a média de idade dos homens descritivas é maior do as das mulheres (p-valor=0.9989>$\alpha$), também podemos ver que 17.9%  das pessoas que possuem nome são mulheres e baseado no teste Qui-Quadrado podemos dizer que a variável sexo e possuir nome no SERASA são dependentes (pois p-valor=0.0005155<$\alpha$)  
+  Com base nos resultados da base de dados, no nível de significância (estabelecido na seção anterior) e usando os testes e análises descritivas adequados, para cada situação, podemos concluir que a média de idade dos homens é maior do as das mulheres (p-valor=0.9989>$\alpha$)>), também podemos ver que 17.9%  das pessoas que possuem nome no SERASA são mulheres e baseado no teste Qui-Quadrado podemos dizer que a variável sexo e possuir nome no SERASA são dependentes (pois p-valor=0.0005155<$\alpha$)  
 
 ## 4-) Conclusão:
 
