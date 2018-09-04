@@ -6,8 +6,8 @@ dir()
 
 # Tratar base ###
 # Leitura ###
-dadosM <- read_xls("Perfil Homens e Mulheres - Bancos.xls", sheet = "homens")
-dadosF <- read_xls("Perfil Homens e Mulheres - Bancos.xls", sheet = "mulheres")
+dadosM <- read_xls("bd/Trabalho I/Perfil Homens e Mulheres - Bancos.xls", sheet = "homens")
+dadosF <- read_xls("bd/Trabalho I/Perfil Homens e Mulheres - Bancos.xls", sheet = "mulheres")
 
 dadosM$sexo <- 1
 dadosF$sexo <- 0
@@ -42,7 +42,7 @@ bank$Curso <- factor(bank$Curso,levels = c('bankantes',"bankdepois"),
 ggplot(dados,aes(sexo,bankantes))+geom_boxplot(fill='red')
 ggplot(dados,aes(sexo,bankdepois))+geom_boxplot(fill='blue')
 
-ggplot(bank,aes(Curso,Tempo))+geom_boxplot(fill='red')
+ggplot(bank,aes(Curso,Tempo))+geom_boxplot(fill='red') + ggtitle("Boxplot tempo de uso do bankline antes e depois do curso")
 
 #Tempo de uso do bankline por semana 
 

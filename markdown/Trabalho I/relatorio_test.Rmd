@@ -1,11 +1,11 @@
 ---
 title: "Trabalho de Estatística Aplicada"
 author: "Daniel dos Santos e Gabriel Mizuno"
-date: "August 25, 2018"
+date: "04 de Setembro de 2018"
 output:
   pdf_document:
     fig_caption: yes
-    fig_crop: no
+    fig_crop: yes
     keep_tex: yes
 header-includes: \usepackage{booktabs} \usepackage{longtable} \usepackage{array} \usepackage{multirow} \usepackage[table]{xcolor} \usepackage{wrapfig} \usepackage{float} \floatplacement{figure}{H} \usepackage{booktabs} \usepackage{multirow} \usepackage{rotating}
 ---
@@ -23,11 +23,11 @@ knitr::opts_chunk$set(echo = TRUE,
 
 ## 2-) Metodologia:
 
-Foi realizados os seguintes testes para responder os objetivos desse relatório Qui-Quadrado, Teste de Hipóteses para Média, Teste de Hipóteses para Variância e Teste de Kolmogorov-Smirnov usando um nível de significância de 10% ($\alpha$=10%). Para a análise e confecção desse relatório foram avaliadas somente algumas variáveis que foram consideradas de interesse para responder as perguntas 1 e 2. 
+  Foi realizados os seguintes testes para responder os objetivos desse relatório Qui-Quadrado, Teste de Hipóteses para Média, Teste de Hipóteses para Variância e Teste de Kolmogorov-Smirnov usando um nível de significância de 10% ($\alpha$=10%). Para a análise e confecção desse relatório foram avaliadas somente algumas variáveis que foram consideradas de interesse para responder as perguntas 1 e 2. 
 	
 ## 3-) Análise dos Resultados:
 
-  Com base nos resultados da base de dados, no nível de significância (estabelecido na seção anterior) e usando os testes e análises descritivas adequados, para cada situação, podemos concluir que a média de idade dos homens é maior do as das mulheres (p-valor=0.9989>$\alpha$), também podemos ver que 17.9%  das pessoas que possuem nome no SERASA são mulheres e baseado no teste Qui-Quadrado podemos dizer que a variável sexo e possuir nome no SERASA são dependentes (pois p-valor=0.0005155<$\alpha$)  
+  Com base nos resultados da base de dados, no nível de significância (estabelecido na seção anterior) e usando os testes e análises descritivas adequados, para cada situação, podemos concluir que a média de idade dos homens é maior do as das mulheres (p-valor=0.9989>$\alpha$), também podemos ver que 17.9%  das pessoas que possuem nome no SERASA são mulheres e baseado no teste Qui-Quadrado podemos dizer que a variável "sexo" e "possuir nome no SERASA" são dependentes (pois p-valor=0.0005155<$\alpha$), fazendo as mesmas análises que fizemos anteriormente podemos concluir que as variáveis "estado civil"" e "sexo" são independentes (usando o p-valor da tabela \ref{table:tab1}).
 
 ## 4-) Conclusão:
 
@@ -50,6 +50,8 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
 ![Compreensão do layout](Entedimento do Layout.jpeg){ width=300px }
 
 ![Satisfação de quem falou com o gerente](Gerente Satisfacao.jpeg){ width=300px }
+![Satisfação de quem falou com o gerente](boxplot_idade_genero.png){ width=300px }
+![Satisfação de quem falou com o gerente](Tempo e Curso.png){ width=300px }
 
 \pagebreak 
 
@@ -106,7 +108,7 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
                 \multicolumn{1}{c}{}    &
                 \multicolumn{1}{l}{Não} & 28 & 31.8 & 60 & 68.2 & 88 & 48.9 &  \\
                 \multicolumn{1}{c}{}    &
-                \multicolumn{1}{l}{Sim}& 23 & 22.5 & 79 & 77.5 & 102  \\
+                \multicolumn{1}{l}{Sim}& 23 & 22.5 & 79 & 77.5 & 102 & 51.1  \\
                 \midrule
                 \bottomrule
         \end{tabular}
