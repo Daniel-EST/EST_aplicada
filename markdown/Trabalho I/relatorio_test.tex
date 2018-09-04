@@ -82,18 +82,18 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{August 25, 2018}
+    \date{04 de Setembro de 2018}
 
 \usepackage{booktabs} \usepackage{longtable} \usepackage{array}
 \usepackage{multirow} \usepackage[table]{xcolor} \usepackage{wrapfig}
 \usepackage{float} \floatplacement{figure}{H} \usepackage{booktabs}
-\usepackage{multirow} \usepackage{rotating}
+\usepackage{multirow} \usepackage{rotating} \usepackage{indentfirst}
 
 \begin{document}
 \maketitle
 
 {
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{3}
 \tableofcontents
 }
 \subsection{1-) Objetivo:}\label{objetivo}
@@ -118,23 +118,91 @@ consideradas de interesse para responder as perguntas 1 e 2.
 
 \subsection{3-) Análise dos Resultados:}\label{analise-dos-resultados}
 
-Com base em nos resultados da base de dados, no nível de significância
-(estabelecido na seção anterior) e usando os teste e análises adequados,
-para cada situação, podemos concluir que a média de idade dos homens
-descritivas é maior do as das mulheres
-(p-valor=0.9989\textgreater{}\(\alpha\)), também podemos ver que 17.9\%
-das pessoas que possuem nome são mulheres e baseado no teste
-Qui-Quadrado podemos dizer que a variável sexo e possuir nome no SERASA
-são dependentes (pois p-valor=0.0005155\textless{}\(\alpha\))
+Com base nos resultados da base de dados, no nível de significância
+(estabelecido na seção anterior) e usando os testes e análises
+descritivas adequados, para cada situação, podemos concluímos para o
+\textbf{1º objetivo} que:
+
+\begin{itemize}
+\tightlist
+\item
+  Utilizando o teste Qui-Quadrado podemos dizer que as variáveis
+  ``Banco'' e ``Satisfeito com o limite'' são independentes (usando o
+  p-valor da tabela \ref{table:tab1}).
+\item
+  Primeiro temos que pelo teste de Kolmogorov-Smirnov que as amostras
+  possuem distribuição normal para o nível de significância de 10\%,
+  temos também que pelo t-test que a média de idade das pessoas não
+  satisfeitas com o limite oferecido é maior do as que estão satisfeitas
+  com seu limite (p-valor=0.1445\textgreater{}\(\alpha\)).
+\item
+  Utilizando o teste Qui-Quadrado podemos dizer que as variáveis
+  ``Banco'' e ``Satisfeito com o limite'' são independentes (usando o
+  p-valor da tabela \ref{table:tab1}).
+\end{itemize}
+
+\textbf{2º objetivo:}
+
+\begin{itemize}
+\tightlist
+\item
+  Para analisarmos as variáveis ``Tempo que é cliente'' e ``Satisfeito
+  com o limite'' estamos considerando que temos normalidade assintótica,
+  nesse cenário podemos dizer que a média de idade de quem é satisfeito
+  com o limite é maior do quem não é satisfeito
+  (p-valor=0.01669\textless{}\(\alpha\)).
+\item
+  Utilizando o teste Qui-Quadrado podemos dizer que as variáveis ``Falou
+  com gerente'' e ``Satisfeito com o limite'' são independentes (usando
+  o p-valor da tabela \ref{table:tab1}).
+\item
+  Utilizando o teste Qui-Quadrado podemos dizer que as variáveis
+  ``sexo'' e ``Satisfeito com o limite'' são dependentes (usando o
+  p-valor da tabela \ref{table:tab1}).
+\end{itemize}
+
+\pagebreak
 
 \subsection{4-) Conclusão:}\label{conclusao}
+
+Verificamos, seção anterior, que há uma relação entre as variáveis
+``sexo'' e ``possuir nome no SERASA'', utilizando a analise descritiva
+na \ref{table:tab2} temos evidências que dos possuem nome no SERASA a
+maioria (64.9\%) são homens já as mulheres estão em minoria com 35.1\%.
+Por outro lado, os homens são os mais satisfeitos com o limite da conta,
+acreditamos que o limite oferecido aos homens é incompatível com a
+situação de inadimplência. Sendo assim, seria mais adequado reduzir o
+limite dos homens e oferecer para a mulher não inadimplentes um limite
+maior.
+
+Pensando quanto a satisfação dos clientes em relação limite oferecido
+podemos afirmar que os clientes do Bradesco são proporcionalmente mais
+satisfeitos com limite oferecido (80\%), já a Caixa possui a maior
+porcentagem de insatisfação dos clientes com o limite.
+
+Usando os teste adequado, a tabela \ref{table:tab2} e um boxplot gráfico
+,presente no apêndice, podemos dizer que o tempo de uso semanal do
+Bankline aumentou para quem fez o curso. Portanto, suspeitamos que o
+curso incentivou o usuário usar mais os serviço disponíveis no Bankline
+sendo assim o curso foi efetivo.
+
+\pagebreak 
 
 \subsection{5-)Apêndice:}\label{apendice}
 
 \subsubsection{5.1-) Figuras:}\label{figuras}
 
+\begin{figure}
+\centering
 \includegraphics[width=3.12500in]{Bancos.png}
+\caption{Número de clientes por banco}
+\end{figure}
+
+\begin{figure}
+\centering
 \includegraphics[width=3.12500in]{pictograma.png}
+\caption{Quantidade de mulheres e homens}
+\end{figure}
 
 \includegraphics[width=3.12500in]{QQ Plot idade genero.jpeg}
 \includegraphics[width=3.12500in]{QQplot Idade x Lim.jpeg}
@@ -145,16 +213,16 @@ são dependentes (pois p-valor=0.0005155\textless{}\(\alpha\))
 \includegraphics[width=3.12500in]{Estado civil por Sexo.jpeg}
 \includegraphics[width=3.12500in]{Entedimento do Layout.jpeg}
 
-\begin{figure}
-\centering
 \includegraphics[width=3.12500in]{Gerente Satisfacao.jpeg}
-\caption{Satisfação de quem falou com o gerente}
-\end{figure}
+\includegraphics[width=3.12500in]{boxplot_idade_genero.png}
+\includegraphics[width=3.12500in]{Tempo e Curso.png}
+\includegraphics[width=3.12500in]{idade_satis.png} \pagebreak 
 
 \subsubsection{5.2-) Tabelas:}\label{tabelas}
 
-\begin{table*}[t!]
+\begin{table*}[h!]
     \centering
+        \caption{Tabela de contigência com p-valor}
         \begin{tabular}{c c c c c c c c c}
             \toprule
             \midrule
@@ -162,7 +230,7 @@ são dependentes (pois p-valor=0.0005155\textless{}\(\alpha\))
                 && \multicolumn{2}{c}{Masculino} & \multicolumn{2}{c}{Feminino} & \multicolumn{2}{c}{Total} \\ \cmidrule{3-9}
                 && n & \% & n & \% & n & \% & P-Valor \\ \cmidrule{3-9}
                 \multicolumn{1}{c}{\multirow{5}{*}}   &
-                \multicolumn{1}{l}{\textbf{SERASA}} &  &  &  & & &  & 0.0005155 \\ \cmidrule{1-9}
+                \multicolumn{1}{l}{\textbf{SERASA}} &  &  &  & & &  & \textcolor{red}{0.0005155} \\ \cmidrule{1-9}
                 \multicolumn{1}{c}{}    &
                 \multicolumn{1}{l}{Não} & 37 & 39.8 & 56 & 60.2 & 93 & 48.9 &  \\
                 \multicolumn{1}{c}{}    &
@@ -184,9 +252,9 @@ são dependentes (pois p-valor=0.0005155\textless{}\(\alpha\))
                 \multicolumn{1}{c}{\multirow{5}{*}}   &
                 \multicolumn{1}{l}{\textbf{SERASA}} &  &  &  & & &  & 0.5203 \\ \cmidrule{1-9}
                 \multicolumn{1}{c}{}    &
-                \multicolumn{1}{l}{Não} & 23 & 24.7 & 28 & 28.9 & 51 & 26.8 &  \\
+                \multicolumn{1}{l}{Não} & 23 & 24.7 & 70 & 75.3 & 93 & 48.9 &  \\
                 \multicolumn{1}{c}{}    &
-                \multicolumn{1}{l}{Sim}& 70 & 50.4 & 69 & 49.6 & 136 & 75.2  \\ \cmidrule{1-9} &
+                \multicolumn{1}{l}{Sim}& 28 & 28.9 & 69 & 71.1 & 97 & 51.1 \\ \cmidrule{1-9} &
                 \multicolumn{1}{l}{\textbf{Banco}}&  &  &  & & &  & 0.1366\\ \cmidrule{1-9}                
                 \multicolumn{1}{c}{}    &
                 \multicolumn{1}{l}{BB} & 17 & 32.1 & 36 & 67.9 & 53 & 27.9  \\
@@ -204,18 +272,23 @@ são dependentes (pois p-valor=0.0005155\textless{}\(\alpha\))
                 \multicolumn{1}{c}{}    &
                 \multicolumn{1}{l}{Não} & 28 & 31.8 & 60 & 68.2 & 88 & 48.9 &  \\
                 \multicolumn{1}{c}{}    &
-                \multicolumn{1}{l}{Sim}& 23 & 22.5 & 79 & 77.5 & 102  \\
+                \multicolumn{1}{l}{Sim}& 23 & 22.5 & 79 & 77.5 & 102 & 51.1  \\ \cmidrule{1-9} &
+                \multicolumn{1}{l}{\textbf{Sexo}} &   &  &  & & &  & \textcolor{red}{0.001251} \\ \cmidrule{1-9}
+                \multicolumn{1}{c}{}    &
+                \multicolumn{1}{l}{Feminino} & 34 & 37.8 & 56 & 62.2 & 90 & 47.4 &  \\
+                \multicolumn{1}{c}{}    &
+                \multicolumn{1}{l}{Masculino}& 17 & 17 & 79 & 83 & 83 & 52.6  \\
                 \midrule
                 \bottomrule
         \end{tabular}
         \centering
-        \caption{Tabela de contigência com p-valor}
         \label{table:tab1}
         \label{tab:sam_count}
 \end{table*}
 
 \begin{table}[h!]
   \begin{center}
+  \caption{Tabela com algumas medidas resumo}
     \begin{tabular}{c|c|c|c|c|c|c|c}
     \hline
       \textbf{Variável} & \textbf{Min} & \textbf{Max} & \textbf{1º Q} & \textbf{2º Q} & \textbf{3º Q} & \textbf{Média}  & \textbf{Desvio Padrão} \\
@@ -225,12 +298,9 @@ são dependentes (pois p-valor=0.0005155\textless{}\(\alpha\))
       Tempo de uso do Bankline depois do curso & 34 & 65 & 48 & 50 & 51 & 49.92 & 3.87 \\ 
       \hline
     \end{tabular}
-    \caption{Tabela com algumas medidas resumo}
      \label{table:tab2}
   \end{center}
 \end{table}
-
-aaa \ref{table:tab2}
 
 
 \end{document}

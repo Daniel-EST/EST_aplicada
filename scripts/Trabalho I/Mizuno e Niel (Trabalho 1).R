@@ -272,6 +272,8 @@ ggplot(dados,aes(x=satisflimite))+geom_bar(aes(fill=serasa))+ylab("Frequ?ncia")+
 #Fazer descritivas do satifacao por banco####
 sjt.xtab(dados$banco,dados$satisflimite,show.summary=F,var.labels = c("Satisfeito com limite?","Banco")
          ,show.row.prc = T,show.col.prc = T)
+sjt.xtab(dados$banco,dados$satisflimite,show.summary=F,var.labels = c("Satisfeito com limite?","Banco")
+         ,show.cell.prc = T)
 
 #Fazendo teste do chi-quadrado
 m <- matrix(c(17,36,16,43,2,8,8,10,4,10,4,32),nrow=2,ncol=6)
@@ -344,3 +346,10 @@ legend(list(x=2.45,y=0.8),
        inset = c(-0.40,0.30))
 
 par(mar = c(5.1, 4.1, 4.1, 2.1))
+
+#Fazer descritivas do satifacao por tempo#########
+sjt.xtab(dados$sexo,dados$satisflimite,show.summary=F,var.labels = c("Sexo","Satisfeito com limite?")
+         ,show.row.prc = T,show.col.prc = T)
+
+m <- matrix(c(34,17,56,83),nrow=2,ncol=2)
+chisq.test(m,correct=F)
