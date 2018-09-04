@@ -35,7 +35,7 @@ dados$fundinvest <- factor(dados$fundinvest, labels = c("n","s"))
 dados$telefone <- factor(dados$telefone, labels = c("n","s"))
 dados$gerente <- factor(dados$gerente, labels = c("n","s"))
 dados$limite <- factor(dados$limite, labels = c("n","s"))
-dados$satisflimite <- factor(dados$satisflimite, labels = c("n","s"))
+dados$satisflimite <- factor(dados$satisflimite, labels = c("não","sim"))
 dados$maisdeumban <- factor(dados$maisdeumban, labels = c("n","s"))
 dados$previdencia <- factor(dados$previdencia, labels = c("n","s"))
 dados$seguro <- factor(dados$seguro, labels = c("n","s"))
@@ -210,6 +210,7 @@ par(mfrow = c(1,2))
 qqnorm(dados$idade[dados$satisflimite=="s"], col = "red", main = "Q-Q Plot \nIdade x Satisfeito com o limite", sub = "Verificando normalidade")
 qqline(dados$idade[dados$satisflimite=="s"], col = "black")
 
+ggplot(dados,aes(x=satisflimite,y=idade))+geom_boxplot(fill='blue')+ggtitle("Satisfação por idade")+xlab('Satisfção com o limite')
 
 #TH para normalidade de dados$sexo=="m"
 dados$idade[dados$satisflimite=="n"] %>% ks.test(x=.,"pnorm",alternative="two.sided",mean=mean(.)
@@ -223,11 +224,11 @@ var.test(dados$idade[dados$satisflimite=="s"],dados$idade[dados$satisflimite=="n
          alternative ="two.sided")
 
 #TH para media
-t.test(dados$idade[dados$satisflimite=="s"],dados$idade[dados$satisflimite=="n"],var.equal=FALSE,
-       alternative ="two.sided")
+t.test(dados$idade[dados$satisflimite=="s"],dados$idade[dados$satisflimite=="n"],var.equal=TRUE,
+       alternative ="less")
 
 #Fazer descritivas do satisfacao por serasa####
-sjt.xtab(dados$satisflimite,dados$serasa,show.summary=F,var.labels = c("Satisfeito com limite?","Possui nome no SERASA")
+sjt.xtab(dados$serasa,dados$satisflimite,show.summary=F,var.labels = c("Possui nome no SERASA","Satisfeito com limite?")
          ,show.row.prc = T,show.col.prc = T)
 
 #Fazendo teste do chi-quadrado
@@ -303,7 +304,9 @@ var.test(dados$tempocliente[dados$satisflimite=="n"],dados$tempocliente[dados$sa
 
 #TH para media
 t.test(dados$tempocliente[dados$satisflimite=="n"],dados$tempocliente[dados$satisflimite=="s"],
-       var.equal=TRUE,alternative ="two.sided")
+       var.equal=TRUE,alternative ="less")
+
+ggplot(dados,aes(x=satisflimite,y=tempocliente))+geom_boxplot(fill='green')+ggtitle("Satisfação por tempo")+xlab('Satisfção com o limite')
 
 #Fazer descritivas do gerente por satisfa??o####
 sjt.xtab(dados$gerente,dados$satisflimite,show.summary=F,var.labels = c("Falou com gerente","Satisfeito com limite?")
