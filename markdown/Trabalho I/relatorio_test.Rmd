@@ -52,7 +52,7 @@ knitr::opts_chunk$set(echo = TRUE,
 ![Satisfação de quem falou com o gerente](Gerente Satisfacao.jpeg){ width=300px }
 ![Satisfação de quem falou com o gerente](boxplot_idade_genero.png){ width=300px }
 ![Satisfação de quem falou com o gerente](Tempo e Curso.png){ width=300px }
-
+![](idade_satis.png){ width=300px }
 \pagebreak 
 
 ### 5.2-) Tabelas:
@@ -88,9 +88,9 @@ knitr::opts_chunk$set(echo = TRUE,
                 \multicolumn{1}{c}{\multirow{5}{*}}   &
                 \multicolumn{1}{l}{\textbf{SERASA}} &  &  &  & & &  & 0.5203 \\ \cmidrule{1-9}
                 \multicolumn{1}{c}{}    &
-                \multicolumn{1}{l}{Não} & 23 & 24.7 & 28 & 28.9 & 51 & 26.8 &  \\
+                \multicolumn{1}{l}{Não} & 23 & 24.7 & 70 & 75.3 & 93 & 48.9 &  \\
                 \multicolumn{1}{c}{}    &
-                \multicolumn{1}{l}{Sim}& 70 & 50.4 & 69 & 49.6 & 136 & 75.2  \\ \cmidrule{1-9} &
+                \multicolumn{1}{l}{Sim}& 28 & 28.9 & 69 & 71.1 & 97 & 51.1 \\ \cmidrule{1-9} &
                 \multicolumn{1}{l}{\textbf{Banco}}&  &  &  & & &  & 0.1366\\ \cmidrule{1-9}                
                 \multicolumn{1}{c}{}    &
                 \multicolumn{1}{l}{BB} & 17 & 32.1 & 36 & 67.9 & 53 & 27.9  \\
