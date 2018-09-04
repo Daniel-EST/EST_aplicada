@@ -7,12 +7,6 @@ output:
     fig_caption: yes
     fig_crop: no
     keep_tex: yes
-    toc: yes
-    toc_depth: 1
-  html_document:
-    df_print: paged
-    toc: yes
-    toc_depth: '1'
 header-includes: \usepackage{booktabs} \usepackage{longtable} \usepackage{array} \usepackage{multirow} \usepackage[table]{xcolor} \usepackage{wrapfig} \usepackage{float} \floatplacement{figure}{H} \usepackage{booktabs} \usepackage{multirow} \usepackage{rotating}
 ---
 
@@ -37,6 +31,8 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
 
 ## 4-) Conclusão:
 
+\pagebreak 
+
 ## 5-)Apêndice:
 
 ### 5.1-) Figuras:
@@ -55,10 +51,11 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
 
 ![Satisfação de quem falou com o gerente](Gerente Satisfacao.jpeg){ width=300px }
 
+\pagebreak 
 
 ### 5.2-) Tabelas:
 
-\begin{table*}[t!]
+\begin{table*}[h!]
     \centering
         \begin{tabular}{c c c c c c c c c}
             \toprule
@@ -134,4 +131,3 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
      \label{table:tab2}
   \end{center}
 \end{table}
-aaa \ref{table:tab2}
