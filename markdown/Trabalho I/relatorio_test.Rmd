@@ -51,6 +51,7 @@ Foi realizados os seguintes testes para responder os objetivos desse relatório 
 ![Número de clientes por banco](Estado civil por Sexo.jpeg){ width=300px }
 ![Número de clientes por banco](Entedimento do Layout.jpeg){ width=300px }
 
+![Número de clientes por banco](Gerente Satisfacao.jpeg){ width=300px }
 
 \textbf{ESTA DANDO RUIM NA HORA DE COLOCAR GERENTE X ALGUMA COISA}
 
