@@ -1,0 +1,30 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{multirow}
+\usepackage{fancyref}
+\usepackage{hyperref}
+\begin{document}
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+    \hline
+      \textbf{Variável} & \textbf{Min} & \textbf{Max} & \textbf{1º Q} & \textbf{2º Q} & \textbf{3º Q} & \textbf{Média}  & \textbf{Desvio Padrão} \\
+      \hline
+      Idade & 20 & 42 & 28 & 30 & 32.75 & 30.37 & 4.3\\
+      Tempo de uso do Bankline antes do curso & 21 & 43 & 27 & 30 & 33.75 & 30.28 & 4.53\\
+      Tempo de uso do Bankline depois do curso & 34 & 65 & 48 & 50 & 51 & 49.92 & 3.87 \\ 
+      \hline
+    \end{tabular}
+    \caption{Tabela com algumas medidas resumo}
+     \label{table:1}
+  \end{center}
+\end{table}
+aaa \ref{table:1}
+\end{document}
