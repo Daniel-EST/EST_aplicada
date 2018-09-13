@@ -1,0 +1,40 @@
+Gini - menor melhor (indicador entre 0 e 1)
+Taxa de atividade - maior melhor (100%)
+
+**************
+
+Ocupados fundamental - maior melhor (100%)
+Ocupados medio - maior melhor (100%)
+Ocupados superior - maior melhor (100%)
+
+**************
+
+Esperança de vida ao nascer - Maior melhor PADRONIZAR (em anos)
+
+-------- pulamos população -----------
+
+Mortalidade infantil - menor melhor (por mil)
+IDHM - maior melhor (0 e 1)
+Probabilidade de sobrevivencia até 60 anos - maior melhor (indicador entre 0 e 100)
+Taxa de envelhecimento - maior melhor (100%)
+Taxa de analfabetismo - menor melhor (100%)
+Expectative de anos de estudo - maior melhor
+% de 18 a 24 anos no fundamental REGULAR SERIADO 2000 - menor melhor
+% de 18 a 24 anos no médio REGULAR SERIADO 2000 - Menor melhor
+% extremamentes pobres - Menor melhor
+% de pobres -Menor melhor     
+% vulneráveis à pobreza - menor melhor 
+renda per capita dos extreamemntes pobres - maior melhor (É uma média de renda dominciliar per capita das familias que recebem menos ou igual a 70 mensal)                 
+Renda per capita dos pobres 2000 - maior melhor (É uma média de renda dominciliar per capita das familias que recebem menos ou igual a 140 mensal) 
+Renda per capita dos vulneráveis à pobreza 2000  - maior melhor(É uma média de renda dominciliar per capita das familias que recebem menos ou igual a 255 mensal) 
+
+
+Vamos usar o mais próximo de 100 melhor
+padronizar a paradas
+
+tirar os NA's
+
+matrizes de cov e cor
+
+PRA MAIS TARDE
+Mapa
