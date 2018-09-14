@@ -2,17 +2,20 @@ library(dplyr)
 
 base <- readRDS('Base_modificada.rds')
 
-base <- base %>% select(-c(Espacialidades,Estado,Código,`População rural 2000`
-                           ,`População rural 2010`,`População rural 2000`
-                           ,`População rural 2010`,`População urbana 2000`,
-                           `População urbana 2010`))
-
 base$Estado <- base$Estado %>% 
   factor()
 base$Espacialidades <- base$Espacialidades %>% 
   factor()
 
+base <- base %>% select(-c(Espacialidades,Estado,Código,`População rural 2000`
+                           ,`População rural 2010`,`População rural 2000`
+                           ,`População rural 2010`,`População urbana 2000`,
+                           `População urbana 2010`))
+
+
 base <- base[-1,] # Tiramos a linha do Brasil
+
+#Matriz de covariancias
 m <- structure(base)
 mat_cor <- cor(m)
 mat_cov <- cov(m)
