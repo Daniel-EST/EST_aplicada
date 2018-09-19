@@ -31,8 +31,10 @@ Renda per capita dos vulneráveis à pobreza 2000  - maior melhor(É uma média 
 
 Vamos usar o mais próximo de 100 melhor
 padronizar a paradas
+botar no mesmo sentid
 
 tirar os NA's
+fazer tabelas 
 
 matrizes de cov e cor
 
@@ -41,9 +43,9 @@ Mapa
 
 
 COISAS COM NA;
-% dos ocupados com fundamental completo - 18 anos ou mais 2000
+% dos ocupados com fundamental completo - 18 anos ou mais 2000 (130 NA's)(TIRAR)
 % dos ocupados com médio completo - 18 anos ou mais 2000
-% dos ocupados com superior completo - 18 anos ou mais 2000 (TIRAR)
+% dos ocupados com superior completo - 18 anos ou mais 2000 (TIRAR) (200 NA's)
 População rural 2000
 População rural 2010
 População urbana 2000

@@ -1,6 +1,6 @@
 library(dplyr)
-
-base <- readRDS('Banco/Trabalho 2/Uteis/Base_modificada.rds')
+library(readxl)
+base <- readRDS("Base_modificada2.rds")
 
 base$Estado <- base$Estado %>% 
   factor()
@@ -34,10 +34,23 @@ base2 <- base %>% mutate(`Esperança de vida ao nascer 2000`=100*padronizacao(ba
                         `Mortalidade infantil 2000`=100*padronizacao(`Mortalidade infantil 2000`))
               
 #Deixando de 0 a 100
-base2 <- base %>% mutate(`Índice de Gini 2000`=100*`Índice de Gini 2000`,
+base2 <- base%>% mutate(`Índice de Gini 2000`=100*`Índice de Gini 2000`,
                         `Índice de Gini 2010`=100*`Índice de Gini 2010`,
                         `IDHM 2000`=100*`IDHM 2000`,
                         `IDHM 2010`=100*`IDHM 2010`)
+
+#Mudando sentido
+base2 <- base2 %>% mutate(`Mortalidade infantil 2000`=100-`Mortalidade infantil 2000`,
+                          `Mortalidade infantil 2010`=100-`Mortalidade infantil 2010`,
+                          `Taxa de analfabetismo - 15 anos ou mais 2000`=100-`Taxa de analfabetismo - 15 anos ou mais 2000`,
+                          `Taxa de analfabetismo - 15 anos ou mais 2010`=100-`Taxa de analfabetismo - 15 anos ou mais 2010`,
+                          `% de extremamente pobres 2000`=100-`% de extremamente pobres 2000`,
+                          `% de extremamente pobres 2010`=100-`% de extremamente pobres 2010`,
+                          `% de pobres 2000`=100-`% de pobres 2000`,
+                          `% de pobres 2010`=100-`% de pobres 2010`,
+                          `% de vulneráveis à pobreza 2000`=100-`% de vulneráveis à pobreza 2000`,
+                          `% de vulneráveis à pobreza 2010`=100-`% de vulneráveis à pobreza 2010`)
+                          
 
 #Matriz de covariancia e correlação
 m <- structure(base2)
