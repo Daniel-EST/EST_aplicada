@@ -1,5 +1,5 @@
 library(dplyr)
-base <- read_xlsx("base2.xlsx")
+base <- read_xlsx("Banco/Trabalho 2/Uteis/base2.xlsx")
 base <- mutate(base, Estado = substring(Código,1,2) )
 base <- base %>% select(Código,Espacialidades,Estado,everything())
 base$Estado[base$Estado==21]="MA"
@@ -11,4 +11,4 @@ base$Estado[base$Estado==26]="PE"
 base$Estado[base$Estado==27]="AL"
 base$Estado[base$Estado==28]="SE"
 base$Estado[base$Estado==29]="BA"
-saveRDS(base, "Base_modificada2.rds")
+saveRDS(base, "Banco/Trabalho 2/Uteis/Base_modificada2.rds")
