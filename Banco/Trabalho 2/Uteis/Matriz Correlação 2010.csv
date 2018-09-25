@@ -1,0 +1,20 @@
+;Índice de Gini 2010;Taxa de atividade - 18 anos ou mais 2010;% dos ocupados com fundamental completo - 18 anos ou mais 2010;% dos ocupados com médio completo - 18 anos ou mais 2010;Esperança de vida ao nascer 2010;Mortalidade infantil 2010;IDHM 2010;Probabilidade de sobrevivência até 60 anos 2010;Taxa de envelhecimento 2010;Taxa de analfabetismo - 15 anos ou mais 2010;Expectativa de anos de estudo 2010;% de 18 a 24 anos no fundamental REGULAR SERIADO 2010;% de 18 a 24 anos no médio REGULAR SERIADO 2010;% de extremamente pobres 2010;% de pobres 2010;% de vulneráveis à pobreza 2010;Renda per capita dos extremamente pobres 2010;Renda per capita dos pobres 2010;Renda per capita dos vulneráveis à pobreza 2010
+Índice de Gini 2000;1;-0,14;0,05;0,05;-0,01;0,03;-0,04;0,01;-0,24;0,01;-0,1;0,17;0,14;-0,49;-0,4;-0,25;0,4;0,49;0,5
+Taxa de atividade - 18 anos ou mais 2000;-0,14;1;0,14;0,12;-0,14;-0,13;0,35;0,13;-0,17;0,4;0,02;-0,09;-0,05;0,47;0,46;0,47;-0,42;-0,47;-0,45
+% dos ocupados com fundamental completo - 18 anos ou mais 2000;0,05;0,14;1;0,96;-0,48;-0,46;0,87;0,47;-0,2;0,77;0,39;-0,36;-0,13;0,53;0,61;0,64;-0,17;-0,46;-0,56
+% dos ocupados com médio completo - 18 anos ou mais 2000;0,05;0,12;0,96;1;-0,48;-0,46;0,86;0,47;-0,12;0,73;0,37;-0,35;-0,19;0,54;0,62;0,66;-0,19;-0,46;-0,56
+Esperança de vida ao nascer 2000;-0,01;-0,14;-0,48;-0,48;1;0,98;-0,64;-1;-0,03;-0,48;-0,13;0,18;0,12;-0,38;-0,45;-0,5;0,09;0,3;0,39
+Mortalidade infantil 2000;0,03;-0,13;-0,46;-0,46;0,98;1;-0,63;-0,99;-0,11;-0,45;-0,14;0,21;0,15;-0,39;-0,46;-0,5;0,13;0,31;0,4
+IDHM 2000;-0,04;0,35;0,87;0,86;-0,64;-0,63;1;0,63;0;0,77;0,49;-0,5;-0,23;0,7;0,79;0,82;-0,34;-0,6;-0,71
+Probabilidade de sobrevivência até 60 anos 2000;0,01;0,13;0,47;0,47;-1;-0,99;0,63;1;0,04;0,47;0,13;-0,18;-0,12;0,37;0,45;0,49;-0,09;-0,3;-0,38
+Taxa de envelhecimento 2000;-0,24;-0,17;-0,2;-0,12;-0,03;-0,11;0;0,04;1;-0,22;0,14;-0,2;-0,11;0,06;0,11;0,11;-0,14;0,05;-0,03
+Taxa de analfabetismo - 15 anos ou mais 2000;0,01;0,4;0,77;0,73;-0,48;-0,45;0,77;0,47;-0,22;1;0,23;-0,26;-0,09;0,54;0,61;0,63;-0,2;-0,47;-0,56
+Expectativa de anos de estudo 2000;-0,1;0,02;0,39;0,37;-0,13;-0,14;0,49;0,13;0,14;0,23;1;-0,45;-0,02;0,2;0,23;0,24;-0,21;-0,16;-0,21
+% de 18 a 24 anos no fundamental REGULAR SERIADO 2000;0,17;-0,09;-0,36;-0,35;0,18;0,21;-0,5;-0,18;-0,2;-0,26;-0,45;1;0,28;-0,31;-0,36;-0,36;0,21;0,23;0,31
+% de 18 a 24 anos no médio REGULAR SERIADO 2000;0,14;-0,05;-0,13;-0,19;0,12;0,15;-0,23;-0,12;-0,11;-0,09;-0,02;0,28;1;-0,27;-0,27;-0,26;0,19;0,25;0,27
+% de extremamente pobres 2000;-0,49;0,47;0,53;0,54;-0,38;-0,39;0,7;0,37;0,06;0,54;0,2;-0,31;-0,27;1;0,94;0,84;-0,57;-0,93;-0,97
+% de pobres 2000;-0,4;0,46;0,61;0,62;-0,45;-0,46;0,79;0,45;0,11;0,61;0,23;-0,36;-0,27;0,94;1;0,95;-0,47;-0,8;-0,95
+% de vulneráveis à pobreza 2000;-0,25;0,47;0,64;0,66;-0,5;-0,5;0,82;0,49;0,11;0,63;0,24;-0,36;-0,26;0,84;0,95;1;-0,41;-0,7;-0,84
+Renda per capita dos extremamente pobres 2000;0,4;-0,42;-0,17;-0,19;0,09;0,13;-0,34;-0,09;-0,14;-0,2;-0,21;0,21;0,19;-0,57;-0,47;-0,41;1;0,69;0,57
+Renda per capita dos pobres 2000;0,49;-0,47;-0,46;-0,46;0,3;0,31;-0,6;-0,3;0,05;-0,47;-0,16;0,23;0,25;-0,93;-0,8;-0,7;0,69;1;0,92
+Renda per capita dos vulneráveis à pobreza 2000;0,5;-0,45;-0,56;-0,56;0,39;0,4;-0,71;-0,38;-0,03;-0,56;-0,21;0,31;0,27;-0,97;-0,95;-0,84;0,57;0,92;1

@@ -2,7 +2,7 @@ library(dplyr)
 library(readxl)
 require(stringr)
 
-base <- readRDS("Banco/Trabalho 2/Uteis/Base_modificada2.rds")
+base <- readRDS("Base_modificada2.rds")
 
 base$Estado <- base$Estado %>% 
   factor()
@@ -64,17 +64,17 @@ base_2010 <- base2 %>%
 m_2000 <- structure(base_2000)
 m_2010 <- structure(base_2010)
 
-mat_cor_2000 <- cor(m_2000)
+mat_cor_2000 <- round(cor(m_2000),2)
 mat_cov_2000 <- cov(m_2000)
 
-mat_cor_2010 <- cor(m_2010)
+mat_cor_2010 <- round(cor(m_2010),2)
 mat_cov_2010 <- cov(m_2010)
 
-write.csv(mat_cor_2000,"Banco/Trabalho 2/Uteis/Matriz Correlação 2000.csv",row.names=FALSE)
-write.csv(mat_cov_2000,"Banco/Trabalho 2/Uteis/Matriz Covariancia 2000.csv",row.names=FALSE)
+write.csv2(mat_cor_2000,"Matriz Correlação 2000.csv",row.names=FALSE)
+write.csv2(mat_cov_2000,"Matriz Covariancia 2000.csv",row.names=FALSE)
 
-write.csv(mat_cor_2010,"Banco/Trabalho 2/Uteis/Matriz Correlação 2010.csv",row.names=FALSE)
-write.csv(mat_cov_2010,"Banco/Trabalho 2/Uteis/Matriz Covariancia 2010.csv",row.names=FALSE)
+write.csv2(mat_cor_2010,"Matriz Correlação 2010.csv",row.names=FALSE)
+write.csv2(mat_cov_2010,"Matriz Covariancia 2010.csv",row.names=FALSE)
 
 
 base2 %>% 
