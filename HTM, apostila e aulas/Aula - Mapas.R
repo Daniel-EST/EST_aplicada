@@ -117,8 +117,8 @@ require(tripack)
 require(rgdal)
 require(ggmap)
 require(readxl)
-
 library(foreign)
+
 #Leitura dos dados
 dados=read.csv2("indicador.csv",header=T)
 names(dados)

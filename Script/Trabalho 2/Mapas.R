@@ -1,56 +1,38 @@
 #AL
-setwd("/Users/gabrielmizuno/Desktop/EST_aplicada/Script/Trabalho 2/Shapes/al_municipios")
-
 #Leitura do shapefile (biblioteca maptools)
-mapa_al=readOGR("27MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
+mapa_al=readOGR("Script/Trabalho 2/Shapes/al_municipios/27MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
 
 ##BA
-setwd("/Users/gabrielmizuno/Desktop/EST_aplicada/Script/Trabalho 2/Shapes/ba_municipios")
-
 #Leitura do shapefile (biblioteca maptools)
-mapa_ba=readOGR("29MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
+mapa_ba=readOGR("Script/Trabalho 2/Shapes/ba_municipios/29MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
 
 ##CE
-setwd("/Users/gabrielmizuno/Desktop/EST_aplicada/Script/Trabalho 2/Shapes/ce_municipios")
-
 #Leitura do shapefile (biblioteca maptools)
-mapa_ce=readOGR("23MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
+mapa_ce=readOGR("Script/Trabalho 2/Shapes/ce_municipios/23MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
 
 ##MA
-setwd("/Users/gabrielmizuno/Desktop/EST_aplicada/Script/Trabalho 2/Shapes/ma_municipios")
-
 #Leitura do shapefile (biblioteca maptools)
-mapa_ma=readOGR("21MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
+mapa_ma=readOGR("Script/Trabalho 2/Shapes/ma_municipios/21MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
 
 ##PB
-setwd("/Users/gabrielmizuno/Desktop/EST_aplicada/Script/Trabalho 2/Shapes/pb_municipios")
-
 #Leitura do shapefile (biblioteca maptools)
-mapa_pb=readOGR("25MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
+mapa_pb=readOGR("Script/Trabalho 2/Shapes/pb_municipios/25MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
 
 ##PE
-setwd("/Users/gabrielmizuno/Desktop/EST_aplicada/Script/Trabalho 2/Shapes/pe_municipios")
-
 #Leitura do shapefile (biblioteca maptools)
-mapa_pe=readOGR("26MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
+mapa_pe=readOGR("Script/Trabalho 2/Shapes/pe_municipios/26MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
 
 ##PI
-setwd("/Users/gabrielmizuno/Desktop/EST_aplicada/Script/Trabalho 2/Shapes/pi_municipios")
-
 #Leitura do shapefile (biblioteca maptools)
-mapa_pi=readOGR("22MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
+mapa_pi=readOGR("Script/Trabalho 2/Shapes/pi_municipios/22MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
 
 ##RN
-setwd("/Users/gabrielmizuno/Desktop/EST_aplicada/Script/Trabalho 2/Shapes/rn_municipios")
-
 #Leitura do shapefile (biblioteca maptools)
-mapa_rn=readOGR("24MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
+mapa_rn=readOGR("Script/Trabalho 2/Shapes/rn_municipios/24MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
 
 ##SE
-setwd("/Users/gabrielmizuno/Desktop/EST_aplicada/Script/Trabalho 2/Shapes/se_municipios")
-
 #Leitura do shapefile (biblioteca maptools)
-mapa_rn=readOGR("28MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
+mapa_rn=readOGR("Script/Trabalho 2/Shapes/se_municipios/28MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
 
 ##Mapa Geral
 
@@ -59,19 +41,18 @@ plot(mapa_geral_al)
 mapa_geral_al@data
 
 ##Indicador Composto
-setwd("/home/116054012/Área de trabalho/Documentos/Estatística Aplicada/Trabalho 2")
-require(readxl)
-composto2000=read_xlsx("T2000.xlsx",sheet="Planilha2")
-composto2010=read_xlsx("T2010.xlsx",sheet="Planilha3")
+
+composto2000=read.csv2("Banco/Trabalho 2/Indicadores 2000.csv",header=T)
+composto2010=read.csv2("Banco/Trabalho 2/Indicadores 2010.csv",header=T)
 
 n=nrow(mapa_geral_al@data)
 n
 
-banco_2000=merge(mapa_geral_al@data,composto2000,by.x="CODIGO",by.y="codigo")
-banco_2010=merge(mapa_geral_al@data,composto2010,by.x="CODIGO",by.y="codigo")
+banco2000=merge(mapa_geral_al@data,composto2000,by.x="CD_GEOCODM",by.y="Código")
+banco2010=merge(mapa_geral_al@data,composto2010,by.x="CD_GEOCODM",by.y="Código")
 
-mapa_geral_al@data$I2000<-banco2000$I2000
-mapa_geral_al@data$I2010<-banco2010$I2010
+mapa_geral_al@data$I2000<-banco2000$Indicador_final
+mapa_geral_al@data$I2010<-banco2010$Indicador_final
 spplot(mapa_geral_al, "I2000")
 spplot(mapa_geral_al, "I2010")
 
