@@ -1,3 +1,6 @@
+require(foreign)
+require(readr)
+require(rgdal)
 #AL
 #Leitura do shapefile (biblioteca maptools)
 mapa_al=readOGR("Script/Trabalho 2/Shapes/al_municipios/27MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
