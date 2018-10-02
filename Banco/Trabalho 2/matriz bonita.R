@@ -13,7 +13,7 @@ base$Espacialidades <- base$Espacialidades %>%
 base2 <- base %>% select(c(Espacialidades,Estado,Código,`Esperança de vida ao nascer 2000`,`Esperança de vida ao nascer 2010`,
                            `Mortalidade infantil 2000`,`Mortalidade infantil 2010`,`Taxa de analfabetismo - 15 anos ou mais 2000`,
                            `Taxa de analfabetismo - 15 anos ou mais 2010`,`% de pobres 2000`,`% de pobres 2010`,`% de vulneráveis à pobreza 2000`,
-                           `% de vulneráveis à pobreza 2010`,`IDHM 2000`,`IDHM 2010`))
+                           `% de vulneráveis à pobreza 2010`))
 base2 <- base2[-1,]
 
 
@@ -29,12 +29,11 @@ base_2000 <- mutate(base_2000,`Esperança de vida ao nascer 2000` = 1- padroniza
                     `Mortalidade infantil 2000` = padronizar(`Mortalidade infantil 2000`),
                     `Taxa de analfabetismo - 15 anos ou mais 2000` = padronizar(`Taxa de analfabetismo - 15 anos ou mais 2000`),
                     `% de pobres 2000` = padronizar(`% de pobres 2000`),
-                    `% de vulneráveis à pobreza 2000` = padronizar(`% de vulneráveis à pobreza 2000`),
-                    `IDHM 2000` = padronizar(`IDHM 2000`)) ; head(base_2000,4)
+                    `% de vulneráveis à pobreza 2000` = padronizar(`% de vulneráveis à pobreza 2000`))
 
 base_2000 <- base_2000 %>% select(-c(Espacialidades,Estado,Código))
 
-base_2000 <- base_2000 %>% rename(Esperança=`Esperança de vida ao nascer 2000`,IDHM=`IDHM 2000`,`Mortalidade infantil`=`Mortalidade infantil 2000`,
+base_2000 <- base_2000 %>% rename(Esperança=`Esperança de vida ao nascer 2000`,`Mortalidade infantil`=`Mortalidade infantil 2000`,
                                   `Taxa de analfabetismo`=`Taxa de analfabetismo - 15 anos ou mais 2000`,`% de pobres`=`% de pobres 2000`,
                                   `% de vulneráveis à pobreza`=`% de vulneráveis à pobreza 2000`)
 
@@ -44,10 +43,9 @@ base_2010 <- mutate(base_2010,`Esperança de vida ao nascer 2010` = 1- padroniza
                     `Mortalidade infantil 2010` = padronizar(`Mortalidade infantil 2010`),
                     `Taxa de analfabetismo - 15 anos ou mais 2010` = padronizar(`Taxa de analfabetismo - 15 anos ou mais 2010`),
                     `% de pobres 2010` = padronizar(`% de pobres 2010`),
-                    `% de vulneráveis à pobreza 2010` = padronizar(`% de vulneráveis à pobreza 2010`),
-                    `IDHM 2010` = padronizar(`IDHM 2010`)) ; head(base_2010,4)
+                    `% de vulneráveis à pobreza 2010` = padronizar(`% de vulneráveis à pobreza 2010`))
 
-base_2010 <- base_2010 %>% rename(Esperança=`Esperança de vida ao nascer 2010`,IDHM=`IDHM 2010`,`Mortalidade infantil`=`Mortalidade infantil 2010`,
+base_2010 <- base_2010 %>% rename(Esperança=`Esperança de vida ao nascer 2010`,`Mortalidade infantil`=`Mortalidade infantil 2010`,
                                   `Taxa de analfabetismo`=`Taxa de analfabetismo - 15 anos ou mais 2010`,`% de pobres`=`% de pobres 2010`,
                                   `% de vulneráveis à pobreza`=`% de vulneráveis à pobreza 2010`)
 

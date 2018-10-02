@@ -58,6 +58,12 @@ mapa_geral_al@data$I2000<-banco2000$Indicador_final
 mapa_geral_al@data$I2010<-banco2010$Indicador_final
 spplot(mapa_geral_al, "I2000")
 spplot(mapa_geral_al, "I2010")
+mapa_geral_al@data$IDH2000<-banco2000$IDHM.2000
+mapa_geral_al@data$IDH2010<-banco2010$IDHM.2010
+spplot(mapa_geral_al, "IDH2000")
+spplot(mapa_geral_al, "IDH2010")
+
+
 
 #### Intervalo do mapa pelo quantil do Indicador ####
 q_1=quantile(mapa_geral_al$I2000,0.25,na.rm = TRUE)
@@ -66,13 +72,13 @@ q_3=quantile(mapa_geral_al$I2000,0.75,na.rm=TRUE)
 intervalo_quartis <- c(0,q_1,q_2,q_3,100)
 
 #Plotando o mapa com legenda do Indicador
-cortes_1t<-cut(mapa_geral_al$I2000,intervalo_quartis,include.lowest=TRUE)
+cortes_1t<-cut(mapa_geral_al$I2010,intervalo_quartis,include.lowest=TRUE)
 niveis_1t<-levels(cortes_1t)
 rw.colors=colorRampPalette(c("#7475f2","#171854"))
 cores_1t<-rw.colors(length(niveis_1t))
 levels(cortes_1t)<-cores_1t
 
-plot(mapa_geral_al,lwd=.1,axes=FALSE,col=as.character(cortes_1t), main="Indicador final 2000")
+plot(mapa_geral_al,lwd=.1,axes=FALSE,col=as.character(cortes_1t), main="Indicador final 2010")
 legend("bottomright",niveis_1t,fill=cores_1t,bty="n",cex=0.7, inset = c(.2,0.28))
 
 help("legend")
