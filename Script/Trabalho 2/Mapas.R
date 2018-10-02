@@ -35,11 +35,11 @@ mapa_rn=readOGR("Script/Trabalho 2/Shapes/rn_municipios/24MUE250GC_SIR.shp",enco
 
 ##SE
 #Leitura do shapefile (biblioteca maptools)
-mapa_rn=readOGR("Script/Trabalho 2/Shapes/se_municipios/28MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
+mapa_se=readOGR("Script/Trabalho 2/Shapes/se_municipios/28MUE250GC_SIR.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
 
 ##Mapa Geral
 
-mapa_geral_al=rbind(mapa_pi,mapa_rn,mapa_pe,mapa_pb,mapa_ma,mapa_ce,mapa_ba,mapa_al)
+mapa_geral_al=rbind(mapa_pi,mapa_rn,mapa_pe,mapa_pb,mapa_ma,mapa_ce,mapa_ba,mapa_al,mapa_se)
 plot(mapa_geral_al)
 mapa_geral_al@data
 
@@ -64,17 +64,16 @@ q_1=quantile(mapa_geral_al$I2000,0.25,na.rm = TRUE)
 q_2=quantile(mapa_geral_al$I2000,0.5,na.rm=TRUE)
 q_3=quantile(mapa_geral_al$I2000,0.75,na.rm=TRUE)
 intervalo_quartis <- c(0,q_1,q_2,q_3,100)
-q_1=quantile(mapa_geral_al$I2010,0.25,na.rm = TRUE)
-q_2=quantile(mapa_geral_al$I2010,0.5,na.rm=TRUE)
-q_3=quantile(mapa_geral_al$I2010,0.75,na.rm=TRUE)
-intervalo_quartis <- c(0,q_1,q_2,q_3,100)
 
 #Plotando o mapa com legenda do Indicador
-cortes_1t<-cut(mapa_geral_al$I2010,intervalo_quartis,include.lowest=TRUE)
+cortes_1t<-cut(mapa_geral_al$I2000,intervalo_quartis,include.lowest=TRUE)
 niveis_1t<-levels(cortes_1t)
-rw.colors=colorRampPalette(c("pink","red"))
+rw.colors=colorRampPalette(c("#7475f2","#171854"))
 cores_1t<-rw.colors(length(niveis_1t))
 levels(cortes_1t)<-cores_1t
 
-plot(mapa_geral_al,lwd=.1,axes=FALSE,col=as.character(cortes_1t))
-legend("left",niveis_1t,fill=cores_1t,bty="n",cex=0.5)
+plot(mapa_geral_al,lwd=.1,axes=FALSE,col=as.character(cortes_1t), main="Indicador final 2000")
+legend("bottomright",niveis_1t,fill=cores_1t,bty="n",cex=0.7, inset = c(.2,0.28))
+
+help("legend")
+
