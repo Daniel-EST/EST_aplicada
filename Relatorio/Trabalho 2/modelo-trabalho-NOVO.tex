@@ -1,0 +1,140 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage[pdftex]{color,graphicx}
+\usepackage{setspace}
+\setlength{\parindent}{0pt}
+\usepackage{multirow}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=1.7cm,right=1.5cm,top=2.5cm,bottom=2cm]{geometry}
+\usepackage{hyperref}
+
+
+\renewcommand{\baselinestretch}{1.5}	
+
+
+
+\pagestyle{empty}
+
+\begin{document}
+
+
+\begin{center}
+\Large{\textbf{Um estudo sobre o desenvolvimento do nordeste }}
+
+\bigskip
+
+\begin{singlespace}
+\large{Carolina Martins Crispim (UFF)
+
+Daniel dos Santos (UFF)
+
+Fernanda Fernandes (UFF)
+
+Gabriel Mizuno (UFF)} 
+
+\bigskip
+
+\small{Github para consulta: \url{https://github.com/Daniel-EST/EST_aplicada}}
+\end{singlespace}
+\end{center}
+
+
+\textbf{Resumo:} Foi criado um indicador composto sobre o desenvolvimento humano a partir de outros para os municípios da região Nordeste. O software utilizado para a manipulção e análise dos dados foi o R e Rstudio.
+
+
+\textbf{Palavras-chave:} Nordeste, indicador, municípios, IDHM
+
+
+\textbf{Introdução}
+
+A princípio reunimos indicadores dos municípios do Nordeste nos anos de 2000 e 2010, verificamos a correlação entre eles com a finalidade de criar um indicador composto para desenvolvimento humano, e então, validá-lo comparando-o com o IDHM. 
+
+Coloque aqui sua introdução, certificando-se de especificar os objetivos. 
+
+\textbf{Material e métodos}
+
+Coloque aqui o material e os métodos utilizados. Veja citação bibliográfica! (\cite{KK})
+
+Os dados procederam do site Atlas Brasil o qual selecionamos os indicadores desejados, sobre renda, educação e saúde dos municípios da região Nordeste. Para os dados faltantes, fizemos uma média com os municípios que pertenciam a mesma microrregião. Aplicamos a correlação de pearson e consideramos que havia relação entre os indicadores com no mínimo 0.43. Sendo assim pegamos os seguintes indicadores Esperança de Vida ao Nascer, Mortalidade Infantil,  \% de Pobres, \% de Vulneráveis à Pobreza, Taxa de Analfabetismo e usamos da seguinte formula: $$ IC = \frac{EVN+MI+TA+P+VP}{5} $$ e então, validamos nosso indicador com o IDHM do mesmo site cuja formula é: $$ \sqrt[3]{\hbox{EDUCAÇÃO x LOGEVIDADE x RENDA}}$$
+
+
+\textbf{Resultados e discussão}
+
+Coloque aqui os resultados obtidos com discussão e conclusão. 
+
+Segundo \cite{SHW}, coloque aqui os resultados obtidos com discussão e conclusão. Coloque aqui os resultados obtidos com discussão e conclusão. Coloque aqui os resultados obtidos com discussão e conclusão. Coloque aqui os resultados obtidos com discussão e conclusão. Coloque aqui os resultados obtidos com discussão e conclusão. Coloque aqui os resultados obtidos com discussão e conclusão. Coloque aqui os resultados obtidos com discussão e conclusão. Coloque aqui os resultados obtidos com discussão e conclusão.
+
+Resultados obtidos, discussão, conclusão, de acordo com \cite{damn}.
+
+Resultados obtidos, discussão, conclusão. Resultados obtidos, discussão, conclusão. Resultados obtidos, discussão, conclusão. Resultados obtidos, discussão, conclusão. Resultados obtidos, discussão, conclusão. 
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+    \hline
+      \textbf{Indicador Simples} & \textbf{Min} & \textbf{Max} & \textbf{1º Q} & \textbf{2º Q} & \textbf{3º Q} & \textbf{Média}  & \textbf{Desvio Padrão} \\
+      \hline
+      Esperança de vida & 57,46 & 56,48 & 63,88 & 64,16 & 65,92 & 74,75 & 2,56\\
+      Taxa de Analfabetimos & 6,28 & 30,71 & 36,08 & 35,76 & 41,06 & 59,83 & 8,139\\
+      \% de pobres & 0,98 & 58,42 & 65,80 & 64,47 & 72,11 & 89,99 & 10,95\\ 
+      \% de vuneraveis a probeza & 7,19 & 80,67 & 85,23 & 83,89 & 88,79 & 99,00 & 7,49 \\ 
+      Mortalidade & 21,4 & 42,52 & 48,62 & 49,09 & 54,65 & 96,37 &  9,736\\ 
+      IDHM & 0,208 & 0,3820 & 0,4200 & 0,4222 & 0,6587 & 0,6840 & 0,0625 \\
+      \hline
+    \end{tabular}
+    \caption{Tabela com algumas medidas resumo dos indicadores de 2000}
+     \label{table:1}
+  \end{center}
+\end{table}
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+    \hline
+      \textbf{Indicador Simples} & \textbf{Min} & \textbf{Max} & \textbf{1º Q} & \textbf{2º Q} & \textbf{3º Q} & \textbf{Média}  & \textbf{Desvio Padrão} \\
+      \hline
+      Esperança de vida & 65,3 & 69,05 & 70,44 & 70,25 & 71,49 & 75,36 & 1,809 \\
+      Taxa de Analfabetimos & 3,97 & 23,28 & 27,7 & 27,29 & 31,84 & 44,4 & 6,669\\
+      \% de pobres & 2,2 & 34,61 & 41,95 & 41,51 & 48,72 & 78,23 & 10,89  \\ 
+      \% de vuneraveis a probeza & 5,12 & 62,11 & 67,98 & 66,93 & 73,11 & 91,57 & 9,539 \\ 
+      Mortalidade & 13,4 & 23,00 & 26,3 & 27,19 & 30,7 & 46,8 & 5,85\\ 
+      IDHM & 0,443 & ,5623 & 0,588 & 0,5907 & 0,6140 & 0,7880 & 0,0432\\ 
+      \hline
+    \end{tabular}
+    \caption{Tabela com algumas medidas resumo dos indicadores de 2000}
+     \label{table:1}
+  \end{center}
+\end{table}
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+    \hline
+      \textbf{Indicador Composto} & \textbf{Min} & \textbf{Max} & \textbf{1º Q} & \textbf{2º Q} & \textbf{3º Q} & \textbf{Média}  & \textbf{Desvio Padrão} \\
+      \hline
+	  2000 & 0,1205 & 0,3131 & 0,3738 & 0,3838 & 0,4405 & 0,9978 & 0,104\\
+	  2010 & 0,056 & 0,3754 & 0,44966 & 0,45419 & 0,52393 & 0,9948 & 0,1275\\
+      \hline
+    \end{tabular}
+    \caption{Tabela com algumas medidas resumo do Indicador composto de 2000 e 2010}
+     \label{table:1}
+  \end{center}
+\end{table}
+
+\renewcommand{\bibname}{Referências}
+\bibliographystyle{rss_port}
+\bibliography{biblio}
+
+
+
+%\renewcommand{\bibname}{"Bibliografia"}
+%\bibliographystyle{plain}
+%\bibliography{ref}
+
+\end{document}
