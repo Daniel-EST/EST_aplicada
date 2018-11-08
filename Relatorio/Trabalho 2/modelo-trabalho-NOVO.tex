@@ -17,10 +17,7 @@
 \usepackage{subfigure}
 \usepackage{float}
 
-
 \renewcommand{\baselinestretch}{1.5}	
-
-
 
 \pagestyle{empty}
 
@@ -28,7 +25,7 @@
 
 
 \begin{center}
-\Large{\textbf{Um estudo sobre o desenvolvimento do nordeste }}
+\Large{\textbf{Um estudo sobre o desenvolvimento do nordeste}}
 
 \bigskip
 
@@ -48,33 +45,29 @@ Gabriel Mizuno (UFF)}
 \end{center}
 
 
-\textbf{Resumo:} Este trabalho se propõe a criar um indicador composto que avalia o desenvolvimento humano nos municípios da região Nordeste do Brasil. O software utilizado para a manipulção e análise dos dados foi o R e Rstudio.
-
+\textbf{Resumo:} Este trabalho se propõe a criar um indicador composto que avalia o desenvolvimento humano nos municípios da região Nordeste do Brasil. O software utilizado para a manipulação e análise dos dados foi o R e Rstudio.
 
 \textbf{Palavras-chave:} Nordeste, indicador, municípios, IDHM, R
 
-
 \textbf{Introdução}
 
-Com cerca de 56 560 081 habitantes. 2015 (wiki) e 9 estados com 1794 municípios a região nordeste possui um
-A princípio reunimos indicadores dos municípios do Nordeste nos anos de 2000 e 2010, verificamos a correlação entre eles com a finalidade de criar um indicador composto para desenvolvimento humano, e então, validá-lo comparando-o com o IDHM. 
-
+A região Nordeste é a terceira região de maior extensão territorial e com a segunda maior população, cerca de 56 milhões de habitantes, possui 9 estados; Alagoas (AL), Bahia(BA), Ceara (CE), Maranhão (MA), Paraíba (PA), Pernambuco(PE), Piauí (PI), Rio Grande do Sul (RN) e Sergipe (SE) totalizando 1794 municípios.
+Este estudo consiste em analisar as correlações entre alguns indicadores relacionados ao desenvolvimento humano para a criação de um novo indicador composto e valida-lo comparando com o IDHM
 
 \textbf{Material e métodos}
 
-Os dados procederam do site Atlas Brasil (\cite{atlas}) onde observamos os indicadores desejados nos anos de 2000 e 2010, sobre renda, educação e saúde dos municípios da região Nordeste. Com os indicadores em mãos organizamos a base de dados e em seguida padronizamos todas as variáveis usando a seguinte fórmula: $$\frac{V_{max}-V_{observado}}{V_{max} - V_{min}} $$ Em seguida, colocamos todas as variáveis no mesmo sentido, de forma que, quanto mais baixo o valor depois de padronizado melhor será para a população i.e. mortalidade infantil e taxa de analfabetismo. Aplicamos a Correlação de Pearson e consideramos que havia relação entre os indicadores com no mínimo 0.43 (mizuneca põe a tabela aqui). Sendo assim pegamos os seguintes indicadores Esperança de Vida ao Nascer, Mortalidade Infantil,  \% de Pobres, \% de Vulneráveis à Pobreza, Taxa de Analfabetismo e usamos da seguinte formula: $$ IC = \frac{EVN+MI+TA+P+VP}{5} $$ e então, validamos nosso indicador com o IDHM do mesmo site cuja fórmula é: $$ \sqrt[3]{\hbox{EDUCAÇÃO x LOGEVIDADE x RENDA}}$$ Geramos um gráfico de dispersão para uma análise descritiva da relação entre o Indicador Composto e o IDHM. E por último, confeccionamos um mapa temático com o nosso indicador composto por município. (faz referência mizuno!)
-
+Os dados procederam do site Atlas Brasil (\cite{atlas}) onde observamos os indicadores desejados nos anos de 2000 e 2010, sobre renda, educação e saúde dos municípios da região Nordeste. Com os indicadores em mãos organizamos a base de dados e em seguida padronizamos todas as variáveis usando a seguinte fórmula: $$\frac{V_{max}-V_{observado}}{V_{max} - V_{min}} $$ Em seguida, colocamos todas as variáveis no mesmo sentido, de forma que, quanto mais baixo o valor depois de padronizado melhor será para a população i.e. mortalidade infantil e taxa de analfabetismo. Aplicamos a Correlação de Pearson e consideramos que havia relação entre os indicadores com no mínimo 0.43 (\ref{Per}). Sendo assim pegamos os seguintes indicadores Esperança de Vida ao Nascer, Mortalidade Infantil,  \% de Pobres, \% de Vulneráveis à Pobreza, Taxa de Analfabetismo e usamos da seguinte formula: $$ IC = \frac{EVN+MI+TA+P+VP}{5} $$ e então, validamos nosso indicador com o IDHM do mesmo site cuja fórmula é: $$ \sqrt[3]{\hbox{EDUCAÇÃO x LOGEVIDADE x RENDA}}$$ Geramos um gráfico de dispersão para uma análise descritiva da relação entre o Indicador Composto e o IDHM. E por último, confecionamos um mapa temático com o nosso indicador composto por município. (\ref{subfig:IC2000} \ref{subfig:IC2010})
 
 Devido a problemas na obtenção da base do site \cite{atlas} adotamos o seguinte critério para inputar sobre os dados faltantes:
 \begin{enumerate}[label=(\roman*)]
 \item fizemos uma média com os municípios que pertenciam a mesma microrregião. 
-\item caso tenha apenas um munícipio na microrregião utilizamos um mapa para localizar os municípios mais próximos
+\item caso tenha apenas um município na microrregião utilizamos um mapa para localizar os municípios mais próximos
 \end{enumerate}
 
 \textbf{Resultados e discussão}
 
-Tendo em vista os resultados apresentados, como podemos notar (mizuno faz referência a tabela ou gráfico) as cores do mapa por município escureceram de 2000 para 2010, o que significa que o Indicador Composto aumentou, sendo assim o desenvolvimento piorou. Entretanto, quando usamos o IDHM para avaliar o desenvolvimento dessa região nos deparamos com uma leve melhora no mesmo período.
-
+Tendo em vista os resultados apresentados, como podemos notar (\ref{table:1}, \ref{table:2}, \ref{table:3},\ref{subfig:IC2000}. \ref{subfig:IC2010}) as cores do mapa por município escureceram de 2000 para 2010, o que significa que o Indicador Composto aumentou, sendo assim o desenvolvimento piorou. Entretanto, quando usamos o IDHM para avaliar o desenvolvimento dessa região nos deparamos com uma leve melhora no mesmo período.
+\vspace{-.4cm}
 \begin{table}[h!]
   \begin{center}
       \caption{Tabela com algumas medidas resumo dos indicadores de 2000}
@@ -93,7 +86,7 @@ Tendo em vista os resultados apresentados, como podemos notar (mizuno faz refer�
      \label{table:1}
   \end{center}
 \end{table}
-
+\vspace{-1cm}
 \begin{table}[h!]
   \begin{center}
       \caption{Tabela com algumas medidas resumo dos indicadores de 2010}
@@ -112,7 +105,7 @@ Tendo em vista os resultados apresentados, como podemos notar (mizuno faz refer�
      \label{table:2}
   \end{center}
 \end{table}
-
+\vspace{-1cm}
 \begin{table}[h!]
   \begin{center}
       \caption{Tabela com algumas medidas resumo do Indicador composto de 2000 e 2010}
@@ -128,14 +121,20 @@ Tendo em vista os resultados apresentados, como podemos notar (mizuno faz refer�
   \end{center}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\textwidth]{2000.png}
+\caption{Correlação de Pearson}
+\label{Per}
+\end{figure}
 
 \begin{figure}[H]
 \centering
 \subfigure[Indicador Composto 2000]{ \label{subfig:IC2000}
-\includegraphics[width=0.4\textwidth]{Indicador_2000.jpg}
+\includegraphics[width=0.45\textwidth]{Indicador_2000.jpg}
 }\ \ \ \
-\subfigure[Indicador Composto 2010]{            \label{subfig:IC2010}
-\includegraphics[width=0.4\textwidth]{Indicador_2000.jpg}
+\subfigure[Indicador Composto 2010]{\label{subfig:IC2010}
+\includegraphics[width=0.45\textwidth]{Indicador_2000.jpg}
 }
 \caption{Mapas do Indicador Composto em 2000 e 20010.}
 \label{fig:leao_grafico}
@@ -143,25 +142,18 @@ Tendo em vista os resultados apresentados, como podemos notar (mizuno faz refer�
 
 \begin{figure}[H]
 \centering
-\subfigure[Indicador Composto 2000]{ \label{subfig:D2000}
-\includegraphics[width=0.4\textwidth]{Dispersao_2000.jpg}
-}   \ \
-\subfigure[Indicador Composto 2010]{            \label{subfig:D2000}
-\includegraphics[width=0.4\textwidth]{Dispersao_2010.jpg
+\subfigure[Grafico de dispersão 2000]{ \label{subfig:D2000}
+\includegraphics[width=0.45\textwidth]{Dispersao_2000.jpg}
+}\ \ \ \
+\subfigure[Grafico de dispersão 2010]{\label{subfig:D2010}
+\includegraphics[width=0.45\textwidth]{Dispersao_2010.jpg}
 }
-\caption{Figuras            apresentadas            com            o            pacote            \textit{subfigure}.}
-\label{fig:D2010}
+\caption{Comparação entre o Indicador Composto criado e IDHM }
+\label{fig:leao_grafico}
 \end{figure}
-
 
 \renewcommand{\bibname}{Referências}
 \bibliographystyle{rss_port}
 \bibliography{biblio}
-
-
-
-%\renewcommand{\bibname}{"Bibliografia"}
-%\bibliographystyle{plain}
-%\bibliography{ref}
 
 \end{document}

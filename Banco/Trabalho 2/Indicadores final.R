@@ -73,5 +73,5 @@ plot(base_2010$Indicador_final, base_2010$`IDHM 2010`,main="IDHM & Indicador fin
 abline(lm(base_2010$`IDHM 2010`~base_2010$Indicador_final), col = "#b7792d")
 
 
-write.csv2(base_2000,"Banco/Trabalho 2/Indicadores 2000.csv",row.names=FALSE)
-write.csv2(base_2010,"Banco/Trabalho 2/Indicadores 2010.csv",row.names=FALSE)
+write.csv2(base_2000,"Indicadores 2000.csv",row.names=FALSE)
+write.csv2(base_2010,"Indicadores 2010.csv",row.names=FALSE)
