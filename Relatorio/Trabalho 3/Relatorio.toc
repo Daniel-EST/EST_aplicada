@@ -1,6 +1,7 @@
 \babel@toc {portuguese}{}
 \contentsline {section}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{section.1}
 \contentsline {section}{\numberline {2}Metodologia}{1}{section.2}
+\contentsline {subsection}{\numberline {2.1}Escala Likert}{2}{subsection.2.1}
 \contentsline {section}{\numberline {3}Conclus\IeC {\~a}o}{2}{section.3}
 \contentsline {section}{\numberline {4}Ap\IeC {\^e}ndice}{2}{section.4}
 \contentsline {subsection}{\numberline {4.1}Gloss\IeC {\'a}rio}{2}{subsection.4.1}
