@@ -1,15 +1,7 @@
-library(readr)
-library(readxl)
-library(dplyr)
-library(stringr)
+library(readr); library(readxl); library(dplyr); library(stringr); library(stringr)
 base<-read_xlsx("Banco/Trabalho 3/base.xlsx")
-base$estado[base$estado=="Santana Catarina"]="Santa Catarina"
-base1<-base%>%select(c(sexo:dinheiro, requisitos))
-base2<-base%>%select(c(jogabilidade,tempo_jogo,grafico,multiplayer,multiplayer_c, divertimento))
 
-saveRDS(base1, "base1.rds")
-saveRDS(base2,"base2.rds")
-
+#Transformando as variaveis
 base$sexo<-base$sexo%>%as.factor()
 base$escolaridade<-base$escolaridade%>%as.factor()
 base$civil<-base$civil%>%as.factor()
@@ -22,6 +14,7 @@ base$midia<-base$midia%>%as.factor()
 base$requisitos<-base$requisitos%>%as.factor()
 base$dinheiro<-base$dinheiro%>%as.factor()
 
+#Mexendo na coluna de generos de jogos
 FPS <- base$genero_jogo %>% str_detect('FPS') 
 RPG <- base$genero_jogo %>% str_detect('RPG')
 RTS <- base$genero_jogo %>% str_detect('RTS')
@@ -34,16 +27,26 @@ SIM <- base$genero_jogo %>% str_detect('Simuladores')
 ESPORTES <- base$genero_jogo %>% str_detect('Esportes')
 ROYALE <- base$genero_jogo %>% str_detect('Battle Royale')
 
-base$FPS <- ifelse(FPS,1,0)
-base$RPG <- ifelse(RPG,1,0)
-base$RTS <- ifelse(RTS,1,0)
-base$LUTA <- ifelse(LUTA,1,0)
-base$ACAO <- ifelse(ACAO,1,0)
-base$PUZZ <- ifelse(PUZZ,1,0)
-base$OUTROS <- ifelse(OUTROS,1,0)
-base$MOBA <- ifelse(MOBA,1,0)
-base$SIM <- ifelse(SIM,1,0)
-base$ESPORTES <- ifelse(ESPORTES,1,0)
-base$ROYALE <- ifelse(ROYALE,1,0)
+#Colocando Sim e Nao nos generos de jjogos
+base$FPS <- ifelse(FPS,"Sim","Nao")
+base$RPG <- ifelse(RPG,"Sim","Nao")
+base$RTS <- ifelse(RTS,"Sim","Nao")
+base$LUTA <- ifelse(LUTA,"Sim","Nao")
+base$ACAO <- ifelse(ACAO,"Sim","Nao")
+base$PUZZ <- ifelse(PUZZ,"Sim","Nao")
+base$OUTROS <- ifelse(OUTROS,"Sim","Nao")
+base$MOBA <- ifelse(MOBA,"Sim","Nao")
+base$SIM <- ifelse(SIM,"Sim","Nao")
+base$ESPORTES <- ifelse(ESPORTES,"Sim","Nao")
+base$ROYALE <- ifelse(ROYALE,"Sim","Nao")
+
+#Criando bases para outras analises e salvando
+base$estado[base$estado=="Santana Catarina"]="Santa Catarina"
+base1<-base%>%select(c(sexo:dinheiro, requisitos))
+base2<-base%>%select(c(jogabilidade,tempo_jogo,grafico,multiplayer,multiplayer_c, divertimento))
+
+saveRDS(base1, "Banco/Trabalho 3/base1.rds")
+saveRDS(base2,"Banco/Trabalho 3/Likert.rds")
+
 
 summary(base1)
