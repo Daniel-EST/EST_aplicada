@@ -1,5 +1,5 @@
 library(readr); library(readxl); library(dplyr); library(stringr); require(foreign)
-base<-read_excel("Banco/Trabalho 3/base.xlsx")
+base<-read_xlsx("Banco/Trabalho 3/base.xlsx")
 #SO PARA O MIZUNO NÃO RODA ISSO, SE VC RODAR ISSO O PROBLEMA É SEU!!!!!!!!!
 #Sys.setlocale("LC_ALL", "pt_BR.ISO8859-1")
 
@@ -29,7 +29,7 @@ SIM <- base$genero_jogo %>% str_detect('Simuladores')
 ESPORTES <- base$genero_jogo %>% str_detect('Esportes')
 ROYALE <- base$genero_jogo %>% str_detect('Battle Royale')
 
-#Colocando Sim e Nao nos generos de jjogos
+#Colocando Sim e Nao nos generos de jogos
 base$FPS <- ifelse(FPS,"Sim","Nao")
 base$RPG <- ifelse(RPG,"Sim","Nao")
 base$RTS <- ifelse(RTS,"Sim","Nao")
@@ -41,6 +41,23 @@ base$MOBA <- ifelse(MOBA,"Sim","Nao")
 base$SIM <- ifelse(SIM,"Sim","Nao")
 base$ESPORTES <- ifelse(ESPORTES,"Sim","Nao")
 base$ROYALE <- ifelse(ROYALE,"Sim","Nao")
+
+
+#Mexendo na coluna produtos
+Mecha<-base$produtos%>%str_detect("Merchandising")
+Skins<-base$produtos%>%str_detect("Skin")
+DLC<-base$produtos%>%str_detect("DLC")
+Apri<-base$produtos%>%str_detect("XP")
+Nenhum<-base$produtos%>%str_detect("Nenhu")
+Outros_p<-base$produtos%>%str_detect("Outr")
+
+#Colocando Sim e Nao nos produtos
+base$Mecha<-ifelse(Mecha, "Sim", "Nao")
+base$Skins<-ifelse(Skins, "Sim", "Nao")
+base$DLC<-ifelse(DLC, "Sim", "Nao")
+base$Apri<-ifelse(Apri, "Sim", "Nao")
+base$Nenhum<-ifelse(Nenhum, "Sim", "Nao")
+base$Outros_p<-ifelse(Outros_p, "Sim", "Nao")
 
 #Criando bases para outras analises e salvando
 base$estado[base$estado=="Santana Catarina"]="Santa Catarina"
