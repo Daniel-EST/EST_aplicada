@@ -1,5 +1,7 @@
-library(readr); library(readxl); library(dplyr); library(stringr); library(stringr)
-base<-read_xlsx("Banco/Trabalho 3/base.xlsx")
+library(readr); library(readxl); library(dplyr); library(stringr); require(foreign)
+base<-read_excel("Banco/Trabalho 3/base.xlsx")
+#SO PARA O MIZUNO NÃO RODA ISSO, SE VC RODAR ISSO O PROBLEMA É SEU!!!!!!!!!
+#Sys.setlocale("LC_ALL", "pt_BR.ISO8859-1")
 
 #Transformando as variaveis
 base$sexo<-base$sexo%>%as.factor()
