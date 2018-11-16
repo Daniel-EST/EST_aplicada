@@ -39,18 +39,18 @@ OUTROS <- base$genero_jogo %>% str_detect('Outros')
 
 
 #Colocando Sim e Nao nos generos de jogos
-base$FPS <- ifelse(FPS,"Sim","Nao")
-base$RPG <- ifelse(RPG,"Sim","Nao")
-base$RTS <- ifelse(RTS,"Sim","Nao")
-base$MMORPG<- ifelse(MMORPG,"Sim", "Nao")
-base$MOBA <- ifelse(MOBA,"Sim","Nao")
-base$ROYALE <- ifelse(ROYALE,"Sim","Nao")
-base$SIM <- ifelse(SIM,"Sim","Nao")
-base$ESPORTES <- ifelse(ESPORTES,"Sim","Nao")
-base$LUTA <- ifelse(LUTA,"Sim","Nao")
-base$ACAO <- ifelse(ACAO,"Sim","Nao")
-base$PUZZ <- ifelse(PUZZ,"Sim","Nao")
-base$OUTROS <- ifelse(OUTROS,"Sim","Nao")
+base$FPS <- ifelse(FPS,"Sim","Nao")%>%as.factor()
+base$RPG <- ifelse(RPG,"Sim","Nao")%>%as.factor()
+base$RTS <- ifelse(RTS,"Sim","Nao")%>%as.factor()
+base$MMORPG<- ifelse(MMORPG,"Sim", "Nao")%>%as.factor()
+base$MOBA <- ifelse(MOBA,"Sim","Nao")%>%as.factor()
+base$ROYALE <- ifelse(ROYALE,"Sim","Nao")%>%as.factor()
+base$SIM <- ifelse(SIM,"Sim","Nao")%>%as.factor()
+base$ESPORTES <- ifelse(ESPORTES,"Sim","Nao")%>%as.factor()
+base$LUTA <- ifelse(LUTA,"Sim","Nao")%>%as.factor()
+base$ACAO <- ifelse(ACAO,"Sim","Nao")%>%as.factor()
+base$PUZZ <- ifelse(PUZZ,"Sim","Nao")%>%as.factor()
+base$OUTROS <- ifelse(OUTROS,"Sim","Nao")%>%as.factor()
 
 #Mexendo na coluna produtos
 DLC<-base$produtos%>%str_detect("DLC")
@@ -61,12 +61,12 @@ Nenhum<-base$produtos%>%str_detect("Nenhu")
 Outros_p<-base$produtos%>%str_detect("Outr")
 
 #Colocando Sim e Nao nos produtos
-base$DLC<-ifelse(DLC, "Sim", "Nao")
-base$Skins<-ifelse(Skins, "Sim", "Nao")
-base$Apri<-ifelse(Apri, "Sim", "Nao")
-base$Mecha<-ifelse(Mecha, "Sim", "Nao")
-base$Nenhum<-ifelse(Nenhum, "Sim", "Nao")
-base$Outros_p<-ifelse(Outros_p, "Sim", "Nao")
+base$DLC<-ifelse(DLC, "Sim", "Nao")%>%as.factor()
+base$Skins<-ifelse(Skins, "Sim", "Nao")%>%as.factor()
+base$Apri<-ifelse(Apri, "Sim", "Nao")%>%as.factor()
+base$Mecha<-ifelse(Mecha, "Sim", "Nao")%>%as.factor()
+base$Nenhum<-ifelse(Nenhum, "Sim", "Nao")%>%as.factor()
+base$Outros_p<-ifelse(Outros_p, "Sim", "Nao")%>%as.factor()
 
 #Mexendo na coluna plataforma
 PC<-base$plataforma%>%str_detect("PC")
@@ -78,12 +78,12 @@ Outros_pla<-base$plataforma%>%str_detect("Outro")
 
 
 #Colocando Sim e Nao nas plataformas
-base$PC<-ifelse(PC,"Sim", "Nao")
-base$Xbox<- ifelse(Xbox, "Sim", "Nao")
-base$PS<-ifelse(PS, "Sim", "Nao")
-base$Wii<- ifelse(Wii, "Sim", "Nao")
-base$Celular<-ifelse(Celular, "Sim", "Nao")
-base$Outros_pla<-ifelse(Outros_pla, "Sim", "Nao")
+base$PC<-ifelse(PC,"Sim", "Nao")%>%as.factor()
+base$Xbox<- ifelse(Xbox, "Sim", "Nao")%>%as.factor()
+base$PS<-ifelse(PS, "Sim", "Nao")%>%as.factor()
+base$Wii<- ifelse(Wii, "Sim", "Nao")%>%as.factor()
+base$Celular<-ifelse(Celular, "Sim", "Nao")%>%as.factor()
+base$Outros_pla<-ifelse(Outros_pla, "Sim", "Nao")%>%as.factor()
 
 #encontrando quem respondeu "nenhum" e outros produtos
 a<-base%>%filter(Nenhum=="Sim")%>%select(Nenhum, DLC, Mecha,Skins, Apri, Outros_p)%>%group_by(Nenhum,DLC,Mecha,Apri, Skins, Outros_p)%>%summarise(freq=n())
