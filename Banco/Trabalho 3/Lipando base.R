@@ -1,7 +1,8 @@
 library(readr); library(readxl); library(dplyr); library(stringr); require(foreign)
-base<-read_xlsx("Banco/Trabalho 3/base.xlsx")
 #SO PARA O MIZUNO NÃO RODA ISSO, SE VC RODAR ISSO O PROBLEMA É SEU!!!!!!!!!
 #Sys.setlocale("LC_ALL", "pt_BR.ISO8859-1")
+base<-read_xlsx("Banco/Trabalho 3/base.xlsx")
+
 
 #alterando midia
 base$midia[base$midia=="Física, Digital"]="Ambos"
