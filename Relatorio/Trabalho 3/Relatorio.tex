@@ -38,6 +38,10 @@
 \usepackage{hyperref}
 \title{Perfil de Consumo de Usuário de Jogos Eletrónicos}
 \author{Carolina Martins, Daniel dos Santos, Fernanda Fernandes, Gabriel Mizuno, Isabelly  Almeida}
+\usepackage{tasks}
+\usepackage{exsheets}
+\SetupExSheets[question]{type=exam}
+\usepackage{makecell}
 \date{ }
  
 \begin{document}
@@ -68,12 +72,12 @@ Depois de coletados os dados foram utilizados os software estatístico Rstudio e
 \item Pessoas com menos de 13 com  Ensino Superior ou Médio  ou Fundamental completo;
 \item Pessoas com menos de 0 anos ou mais de 100 anos;
 \item Pessoas com menos de 19 anos com Pós-Graduação
-\item Pessoas que responderam Nenhum na pergunta "Quais desses produtos relacionados a jogos você costuma comprar?" e marcaram alguma outra opções na mesma pergunta.
+\item Pessoas que responderam Nenhum na pergunta "Quais desses produtos relacionados a jogos você costuma comprar?"  e marcaram alguma outra opções na mesma pergunta.
 \end{enumerate}
 Usando os critérios citados acima tiramos cerca de 186 voluntários, totalizando assim um total de 1792 voluntários , sendo que desse total obtivemos 183 pessoas do gênero Feminino, 1603 do gênero Masculino e 6 declararam ter um gênero diferentes de Masculino  ou Feminino. 
 \\
 
-Depois de tratada foi iniciada as analises estatísticas usando um $\alpha=\%5=0.05$, nessas analises foi usado teste de Kolmogorov-Smirnov para verificar normalidade da variável Idade.
+Depois de tratada foi iniciada as analises estatísticas usando um $\alpha=5\%=0.05$, nessas analises foi usado teste de Kolmogorov-Smirnov para verificar normalidade da variável Idade.
 
 \subsection{Escala Likert}
 
@@ -88,6 +92,8 @@ A Escala Likert é utilizada para mensurar tendências de uma questão ou afirma
 \section{Conclusão}
 
 \section{Apêndice}
+\subsection{Tabelas}
+\subsection{Gráficos}
 \subsection{Glossário}
 
 \begin{enumerate}[label=(\roman*)]
@@ -102,4 +108,158 @@ A Escala Likert é utilizada para mensurar tendências de uma questão ou afirma
 \item \textit{Puzzle} = Jogos de quebra - cabeça, como: Portal , etc;
 \end{enumerate}
 
+\subsection{Formulário}
+
+\begin{question}
+	Qual é seu gênero?
+	\begin{tasks}(3)
+		\task Masculino
+		\task Feminino
+		\task Outros
+	\end{tasks}
+\end{question}
+
+\begin{question}
+	Qual é seu estado civil?
+	\begin{tasks}(3)
+	\task Solteiro(a)
+	\task Casado(a) ou União Estável
+	\task Divorciado(a)
+	\task Viúvo(a)
+	\task Outro
+	\end{tasks}
+\end{question}
+
+\begin{question}
+ 	Qual é sua escolaridade?
+	\begin{tasks}(3)
+	\task Ensino Fundamental - Incompleto
+	
+	\task Ensino Fundamental - Completo
+	\task Ensino Médio - Incompleto
+	\task Ensino Médio - Completo
+	
+	\task Ensino Superior - Incompleto
+	
+	\task Ensino Superior - Completo
+	
+	\task Pós - Graduação
+	\end{tasks}
+\end{question}
+\begin{question}
+ 	Quais gêneros de jogos você joga atualmente?
+	\begin{tasks}(5)
+	\task FPS
+	\task RPG
+	\task RTS
+	\task MMORPG
+	\task MOBA
+	\task Battle Royale
+	\task Simuladores
+	\task Esportes
+	\task Luta
+	\task Ação e Aventura
+	\task Puzzle
+	\task Outros
+	\end{tasks}
+\end{question}
+\begin{question}
+	Quantas horas por semana você costuma jogar?
+	\begin{tasks}(3)
+	\task menos de 2 horas
+	\task de 2 à 4 horas
+	\task de 4 à 6 horas
+	\task mais de 6 horas
+	\end{tasks}
+\end{question}
+\begin{question}
+	Quais plataformas você possui na sua casa?
+	\begin{tasks}(3)
+	\task PC (Steam, Origin, Uplay, etc)
+	\task Xbox 360 / Xbox One / Xbox One X / Xbox One S
+	\task PS3 / PS4 / PS4 Pro
+	\task Wii / Wii U / Switch
+	\task Celular e Portáteis
+	\task Outros
+	\end{tasks}
+\end{question}
+\begin{question}
+	Você tem o hábito de comprar jogos durante a pré-venda?
+	\begin{tasks}(3)
+	\task Sim
+	\task Não
+	\end{tasks}
+\end{question}
+\begin{question}
+	Você acha justo o preço pago pelos jogos no Brasil?
+	\begin{tasks}(3)
+	\task Sim
+	\task Não
+	\end{tasks}
+\end{question}
+\begin{question}
+	Em que tipo de mídia você consome? (compra, presente ou free to play).
+	\begin{tasks}(3)
+	\task Fisica
+	\task Digital
+	\end{tasks}
+\end{question}
+\begin{question}
+	Quais desses produtos relacionados a jogos você costuma comprar?
+	\begin{tasks}(3)
+	\task DLC / Season Pass
+	\task Skins
+	\task Aprimoramentos (XP Boost, Gold Boost, etc...)
+	\task Merchandising (Camisas, Pelúcias, Action Figures, etc...)
+	\task Nenhum
+	\task Outros
+	\end{tasks}
+\end{question}
+\begin{question}
+ Já foi em alguma conferência ou evento relacionadas aos jogos?
+	\begin{tasks}(3)
+	\task Sim
+	\task Não
+	\end{tasks}
+\end{question}
+
+\begin{question}
+	Já gastou mais dinheiro do que tinha ou devia com jogos?
+	\begin{tasks}(3)
+	\task Sim
+	\task Não 
+	\task Talvez
+	\end{tasks}
+\end{question}
+
+\begin{question}
+	Você já deixou de jogar por causa dos requisitos mínimos?
+	\begin{tasks}(3)
+	\task Sim
+	\task Não
+	\end{tasks}
+\end{question}
+
+\begin{question}
+\begin{center}
+  \begin{tabular}{| c | c | c | c | }
+    \hline
+    & Alta Importância & Média Importância & Baixa Importância\\ 
+    \hline
+    \hline
+    Jogabilidade & & & \\ \hline
+	Gráficos  & & &\\
+    \hline
+    Multiplayer & & & \\
+    \hline
+    Multiplayer Competitivo & & & \\
+    \hline
+    \makecell{	Tempo de Jogo (Tempo \\ necessário para terminar o jogo)}  & & &\\
+    \hline
+    Grau de Divertimento & & & \\
+    \hline
+  \end{tabular}
+\end{center}
+\end{question}
+\textcolor{red}{\underline{OBS}: Nas questões 4, 6, 9, 10 e 13 o voluntario poderia marcar mais de uma opção}
 \end{document}

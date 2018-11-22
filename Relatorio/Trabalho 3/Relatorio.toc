@@ -4,4 +4,7 @@
 \contentsline {subsection}{\numberline {2.1}Escala Likert}{2}{subsection.2.1}
 \contentsline {section}{\numberline {3}Conclus\IeC {\~a}o}{3}{section.3}
 \contentsline {section}{\numberline {4}Ap\IeC {\^e}ndice}{3}{section.4}
-\contentsline {subsection}{\numberline {4.1}Gloss\IeC {\'a}rio}{3}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.1}Tabelas}{3}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Gr\IeC {\'a}ficos}{3}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Gloss\IeC {\'a}rio}{3}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Formul\IeC {\'a}rio}{3}{subsection.4.4}
