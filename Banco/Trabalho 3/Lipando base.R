@@ -95,6 +95,13 @@ which(base$Nenhum=="Sim"&base$Apri=="Sim")
 which(base$Nenhum=="Sim"&base$Skins=="Sim")
 which(base$Nenhum=="Sim"&base$Outros_p=="Sim")
 
+# Criando categorias para idade
+base$idade.cat <- cut(base$idade, 
+                      breaks = c(-Inf,17,24,+Inf),
+                      labels = c('Adolescente', 
+                                 'Jovem', 
+                                 'Adulto'))
+
 #removendo as linhas do pessoal errado
 base<-base[-c(167,658,771,1200,1241,133,277,1295,1524,1550,1661,1744,352,751,1036,1490,1671),]
 
@@ -104,9 +111,10 @@ base<-base%>%select(-c(produtos,plataforma,genero_jogo))
 
 
 #Criando bases para outras analises e salvando
-base1<-base%>%select(c(sexo:dinheiro, requisitos, FPS:Outros_pla))
-base2<-base%>%select(c(jogabilidade,tempo_jogo,grafico,multiplayer,multiplayer_c, divertimento))
+base1<-base%>%select(c(sexo:dinheiro, requisitos, FPS:Outros_pla, idade.cat))
+base2<-base%>%select(c(jogabilidade,tempo_jogo,grafico,multiplayer,multiplayer_c, divertimento, idade.cat))
 
 saveRDS(base1, "Banco/Trabalho 3/base1.rds")
 saveRDS(base2,"Banco/Trabalho 3/Likert.rds")
 
+base <- readRDS('Banco/Trabalho 3/base1.rds')
