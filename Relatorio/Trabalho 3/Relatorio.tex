@@ -42,6 +42,7 @@
 \usepackage{exsheets}
 \SetupExSheets[question]{type=exam}
 \usepackage{makecell}
+\usepackage{color, colortbl}
 \date{ }
  
 \begin{document}
@@ -77,7 +78,14 @@ Depois de coletados os dados foram utilizados os software estatístico Rstudio e
 Usando os critérios citados acima tiramos cerca de 186 voluntários, totalizando assim um total de 1792 voluntários , sendo que desse total obtivemos 183 pessoas do gênero Feminino, 1603 do gênero Masculino e 6 declararam ter um gênero diferentes de Masculino  ou Feminino. 
 \\
 
-Depois de tratada foi iniciada as analises estatísticas usando um $\alpha=5\%=0.05$, nessas analises foi usado teste de Kolmogorov-Smirnov para verificar normalidade da variável Idade.
+Depois de tratada foi iniciada as analises estatísticas usando um $\alpha=5\%=0.05$, nessas analises foram usados os seguintes testes:
+\begin{itemize}[noitemsep,nolistsep]
+\item Kolmogorov–Smirnov
+\item Chi-Quadrado (Teste de Independência ou Homogeneidade)
+\item ANOVA
+\item Levene
+\item Bonferroni
+\end{itemize}
 
 \subsection{Escala Likert}
 
@@ -93,6 +101,21 @@ A Escala Likert é utilizada para mensurar tendências de uma questão ou afirma
 
 \section{Apêndice}
 \subsection{Tabelas}
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+    \hline
+      \textbf{Variável} & \textbf{Min} &  \textbf{1º Q} &\textbf{2º Q} &  \textbf{Média}  & \textbf{3º Q} & \textbf{Max}  & \textbf{Desvio Padrão} \\
+      \hline
+      Idade & 13 & 17 & 20 & 20.96 & 23 & 55 & 5.04\\
+      \hline
+    \end{tabular}
+    \caption{Tabela com medidas resumo da Idade}
+     \label{table:1}
+  \end{center}
+\end{table}
+
 \subsection{Gráficos}
 \subsection{Glossário}
 
