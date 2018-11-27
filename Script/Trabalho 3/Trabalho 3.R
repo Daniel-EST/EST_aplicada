@@ -1,7 +1,7 @@
 require(ggplot2); require(dplyr); library(DescTools); require(likert); require(magrittr)
 require(rgdal)
 #SO PARA O MIZUNO NÃO RODA ISSO, SE VC RODAR ISSO O PROBLEMA É SEU!!!!!!!!!
-#Sys.setlocale("LC_ALL", "pt_BR.ISO8859-1")
+Sys.setlocale("LC_ALL", "pt_BR.ISO8859-1")
 
 base <- readRDS("Banco/Trabalho 3/base1.rds")
 Likert <- readRDS("Banco/Trabalho 3/Likert.rds")
@@ -22,6 +22,13 @@ PostHocTest(comparacao, method = "bonferroni")
 #Acho melhor passa um summary e fazer um tabela
 ggplot(base, aes(x=estado)) + geom_bar() 
 summary(base$estado)
+base2= toupper(base$estado)
+base2 = as.factor(base$estado)
+base2 <- group_by(base, estado) %>% summarise(n = length(estado))
+mapa_br=readOGR("Banco/Trabalho 3/UFEBRASIL.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
+mapa_br@data$NM_ESTADO = as.factor(mapa_br@data$NM_ESTADO)
+mapa_br@data <- inner_join(mapa_br@data,base2, by = c("NM_ESTADO" = "estado"))
+spplot(mapa_br, "n")
 
 #Escala Likert
 Likert <- Likert %>% 
@@ -54,10 +61,3 @@ Likert %<>%  as.data.frame()
 tabela_likert <- likert(Likert)
 plot(tabela_likert)
 
-base$estado = toupper(base$estado)
-base$estado = as.factor(base$estado)
-mapa_br=readOGR("/Trabalho 3/UFEBRASIL.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
-mapa_br@data$NM_ESTADO = as.factor(mapa_br@data$NM_ESTADO)
-mapa_br@data <- inner_join(mapa_br@data,base, by = c("NM_ESTADO" = "estado"))
-spplot(mapa_br, "n")
-qt=round(quantile(base$n, na.rm = F),2)
