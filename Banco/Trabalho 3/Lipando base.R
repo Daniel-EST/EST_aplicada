@@ -8,8 +8,8 @@ base<-read_xlsx("Banco/Trabalho 3/base.xlsx")
 base$midia[base$midia=="Física, Digital"]="Ambos"
 
 #alterando santa catarina
-base$estado[base$estado=="Santana Catarina"]="Santa Catarina"
-
+base$estado[base$estado=="Santana Catarina"] = "Santa Catarina"
+base$estado[base$estado=="Espirito Santos"] = "Espírito Santo"
 
 #Transformando as variaveis
 base$sexo<-base$sexo%>%as.factor()
