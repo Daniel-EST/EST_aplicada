@@ -20,7 +20,6 @@ PostHocTest(comparacao, method = "bonferroni")
 
 #Estados
 #Acho melhor passa um summary e fazer um tabela
-ggplot(base, aes(x=estado)) + geom_bar() 
 summary(base$estado)
 base2= toupper(base$estado)
 base2 = as.factor(base$estado)
