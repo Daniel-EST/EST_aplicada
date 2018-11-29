@@ -1,5 +1,5 @@
 require(ggplot2); require(dplyr); library(DescTools); require(likert); require(magrittr)
-require(rgdal)
+require(rgdal); library(tidyr)
 #SO PARA O MIZUNO NÃO RODA ISSO, SE VC RODAR ISSO O PROBLEMA É SEU!!!!!!!!!
 #Sys.setlocale("LC_ALL", "pt_BR.ISO8859-1")
 
@@ -61,9 +61,94 @@ Likert %<>%  as.data.frame()
 tabela_likert <- likert(Likert)
 plot(tabela_likert)
 
+#Tipo de plataforma por genero jogo 
+
+base2 <- select(base,c(FPS:OUTROS,PC:Outros_pla))
+
+base2 <- apply(base2, 2, function(x)ifelse(x=="Sim",1,0 )) %>% as.data.frame()
+
+PC <- filter(base2,PC==1) %>% select(c(FPS:OUTROS))
+PC <- apply(PC, 2, sum) %>% as.data.frame()
+colnames(PC) <- "PC"
+PC <- t(PC)
+
+Xbox <- filter(base2,Xbox==1) %>% select(c(FPS:OUTROS))
+Xbox <- apply(Xbox, 2, sum) %>% as.data.frame()
+colnames(Xbox) <- "Xbox"
+Xbox <- t(Xbox)
+
+PS <- filter(base2,PS==1) %>% select(c(FPS:OUTROS))
+PS <- apply(PS, 2, sum) %>% as.data.frame()
+colnames(PS) <- "PS"
+PS <- t(PS)
+
+Wii <- filter(base2,Wii==1) %>% select(c(FPS:OUTROS))
+Wii <- apply(Wii, 2, sum) %>% as.data.frame()
+colnames(Wii) <- "Wii"
+Wii <- t(Wii)
+
+Celular <- filter(base2,Celular==1) %>% select(c(FPS:OUTROS))
+Celular <- apply(Celular, 2, sum) %>% as.data.frame()
+colnames(Celular) <- "Celular"
+Celular <- t(Celular)
+
+Outros_pla <- filter(base2,Outros_pla==1) %>% select(c(FPS:OUTROS))
+Outros_pla <- apply(Outros_pla, 2, sum) %>% as.data.frame()
+colnames(Outros_pla) <- "Outros_pla"
+Outros_pla <- t(Outros_pla)
+
+juntos<- rbind(PC,Xbox,PS,Wii,Celular,Outros_pla)%>% as.data.frame()
+Total <- apply(juntos,1,sum)
+juntos <- cbind(juntos,Total)
+
 #Genero
 
 barplot(prop.table(table(base$sexo)),ylim = c(0, 1),main="Genero")
+summary(base$sexo)
+ 
+#Cat idade por tempo
+
+tab1_hora_cat <- table(base$idade.cat, base$horas_semana) %>% as.matrix(); tab1_hora_cat
+chisq.test(tab1_hora_cat,correct=FALSE)
+
+base %>%
+  ggplot(aes(x=idade.cat)) + 
+  geom_bar(aes(fill=horas_semana), position = "fill") + 
+  labs(title="Horas jogadas por categoria das idades", 
+       y="Frequencia relativa") 
+
+#Cat idade por preço
+
+tab1_hora_cat <- table(base$idade.cat, base$preco_jogos) %>% as.matrix(); tab1_hora_cat
+chisq.test(tab1_hora_cat,correct=FALSE)
+
+base %>%
+  ggplot(aes(x=preco_jogos)) + 
+  geom_bar(aes(fill=idade.cat), position = "fill") + 
+  labs(title="Preco dos jogos por categoria de idades", 
+       y="Frequencia relativa") 
+
+#Cart idade por + dinheiro
+
+tab1_hora_cat <- table(base$idade.cat, base$dinheiro) %>% as.matrix(); tab1_hora_cat
+chisq.test(tab1_hora_cat,correct=FALSE)
+
+base %>%
+  ggplot(aes(x=idade.cat)) + 
+  geom_bar(aes(fill=dinheiro), position = "fill") + 
+  labs(title="Preco dos jogos por categoria das idades", 
+       y="Frequencia relativa") 
+
+#Midias por preço
+
+tab1_hora_cat <- table(base$midia, base$preco_jogos) %>% as.matrix(); tab1_hora_cat
+chisq.test(tab1_hora_cat,correct=FALSE)
+
+base %>%
+  ggplot(aes(x=midia)) + 
+  geom_bar(aes(fill=preco_jogos), position = "fill") + 
+  labs(title="Horas jogadas por categoria das idades", 
+       y="Frequencia relativa") 
 
 #Requisitos minimos
 
