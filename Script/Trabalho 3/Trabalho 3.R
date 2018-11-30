@@ -93,6 +93,15 @@ quant <- cbind(base3$quant_plant,base2$quant_jogos)%>% as.data.frame()
 colnames(quant) <- c("Plataforma","Genero")
 
 table(quant)
+quant$Plataforma=as.factor(quant$Plataforma)
+quant$Genero=as.factor(quant$Genero)
+
+#grafico
+
+quant %>%
+  ggplot(aes(x=Plataforma)) + 
+  geom_bar(aes(fill=Genero), position = "fill")
+
 
 #Genero
 
