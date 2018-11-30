@@ -23,8 +23,9 @@ PostHocTest(comparacao, method = "bonferroni")
 summary(base$estado)
 
 base2 <- group_by(base, estado) %>% summarise(n = length(estado))
-base2$estado <-  as.factor(base2$estado)
+base2$estado <-  as.character(base2$estado)
 base2$estado[base2$estado=="Espírito Santo"] <- "Espirito Santo"
+base2$estado <- toupper(base2$estado)
 mapa_br <- readOGR("Banco/Trabalho 3/UFEBRASIL.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
 mapa_br@data$NM_ESTADO <-  as.factor(mapa_br@data$NM_ESTADO)
 mapa_br@data <- inner_join(mapa_br@data,base2, by = c("NM_ESTADO" = "estado"))
