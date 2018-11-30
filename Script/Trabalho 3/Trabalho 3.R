@@ -31,6 +31,23 @@ mapa_br@data$NM_ESTADO <-  as.factor(mapa_br@data$NM_ESTADO)
 mapa_br@data <- inner_join(mapa_br@data,base2, by = c("NM_ESTADO" = "estado"))
 spplot(mapa_br, "n")
 
+q_1=quantile(mapa_br@data$n,0.25,na.rm = TRUE)
+q_2=quantile(mapa_br@data$n,0.5,na.rm=TRUE)
+q_3=quantile(mapa_br@data$n,0.75,na.rm=TRUE)
+q_4=quantile(mapa_br@data$n,1,na.rm=TRUE)
+intervalo_quartis <- c(0,q_1,q_2,q_3,q_4)
+
+#Mapa falta melhorar
+cortes_1t<-cut(mapa_br@data$n,intervalo_quartis,include.lowest=TRUE)
+niveis_1t<-levels(cortes_1t)
+rw.colors=colorRampPalette(c("pink","red"))
+cores_1t<-rw.colors(length(niveis_1t))
+levels(cortes_1t)<-cores_1t
+
+plot(mapa_br,lwd=.1,axes=FALSE,col=as.character(cortes_1t))
+legend("bottomright",niveis_1t,fill=cores_1t,bty="n",cex=0.7, inset = c(.1,0.28))
+
+
 #Escala Likert
 Likert <- Likert %>% 
   select(-c(idade.cat))
@@ -64,43 +81,18 @@ plot(tabela_likert)
 
 #Tipo de plataforma por genero jogo 
 
-base2 <- select(base,c(FPS:OUTROS,PC:Outros_pla))
-
+base2 <- select(base,c(FPS:OUTROS))
 base2 <- apply(base2, 2, function(x)ifelse(x=="Sim",1,0 )) %>% as.data.frame()
+base2$quant_jogos <- apply(base2, 1, sum)
 
-PC <- filter(base2,PC==1) %>% select(c(FPS:OUTROS))
-PC <- apply(PC, 2, sum) %>% as.data.frame()
-colnames(PC) <- "PC"
-PC <- t(PC)
+base3 <- select(base,c(PC:Outros_pla))
+base3 <- apply(base3, 2, function(x)ifelse(x=="Sim",1,0 )) %>% as.data.frame()
+base3$quant_plant <- apply(base3, 1, sum)
 
-Xbox <- filter(base2,Xbox==1) %>% select(c(FPS:OUTROS))
-Xbox <- apply(Xbox, 2, sum) %>% as.data.frame()
-colnames(Xbox) <- "Xbox"
-Xbox <- t(Xbox)
+quant <- cbind(base3$quant_plant,base2$quant_jogos)%>% as.data.frame()
+colnames(quant) <- c("Plataforma","Genero")
 
-PS <- filter(base2,PS==1) %>% select(c(FPS:OUTROS))
-PS <- apply(PS, 2, sum) %>% as.data.frame()
-colnames(PS) <- "PS"
-PS <- t(PS)
-
-Wii <- filter(base2,Wii==1) %>% select(c(FPS:OUTROS))
-Wii <- apply(Wii, 2, sum) %>% as.data.frame()
-colnames(Wii) <- "Wii"
-Wii <- t(Wii)
-
-Celular <- filter(base2,Celular==1) %>% select(c(FPS:OUTROS))
-Celular <- apply(Celular, 2, sum) %>% as.data.frame()
-colnames(Celular) <- "Celular"
-Celular <- t(Celular)
-
-Outros_pla <- filter(base2,Outros_pla==1) %>% select(c(FPS:OUTROS))
-Outros_pla <- apply(Outros_pla, 2, sum) %>% as.data.frame()
-colnames(Outros_pla) <- "Outros_pla"
-Outros_pla <- t(Outros_pla)
-
-juntos<- rbind(PC,Xbox,PS,Wii,Celular,Outros_pla)%>% as.data.frame()
-Total <- apply(juntos,1,sum)
-juntos <- cbind(juntos,Total)
+table(quant)
 
 #Genero
 
@@ -157,3 +149,5 @@ prop <- ifelse(base$requisitos=="Sim",1,0); mean(prop)
 prop.test(sum(prop), length(prop), alternative = "less", p = 0.5, correct = FALSE)
 
 barplot(prop.table(table(base$requisitos)),ylim = c(0, 1),main="Deixou de jogar por cuasa dos requisitos?")
+
+#
