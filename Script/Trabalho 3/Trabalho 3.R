@@ -11,7 +11,12 @@ Likert <- readRDS("Banco/Trabalho 3/Likert.rds")
 #Box plot por idadde, temos que usar ANOVA
 summary(base$idade)
 sd(base$idade)
-ggplot(base, aes(x = sexo, y = idade)) + geom_boxplot(color = "red",fill="blue") + ylab("Idade") + xlab("Genero")
+ggplot(base, aes(x = sexo, y = idade)) + geom_boxplot(fill="#00bfc4") + ylab("Idade") + xlab("Gênero")+theme_light()+theme(legend.position = "none")
+
+
+summary(base$estado)
+length(base$estado)
+
 
 #Verificando Homocedacidade
 LeveneTest(base$idade, base$sexo, center = "mean")
@@ -82,7 +87,8 @@ colnames(Likert)<- c("Divertimento","Jogabilidade", "Multiplayer", "Multiplayer 
 
 Likert %<>%  as.data.frame()
 tabela_likert <- likert(Likert)
-plot(tabela_likert)+ ylab("Porcentagem")+scale_fill_discrete(name="Resposta")
+
+plot(tabela_likert)+theme(legend.)
 
 #Tipo de plataforma por genero jogo 
 
@@ -105,11 +111,11 @@ quant$Genero=as.factor(quant$Genero)
 
 quant %>%
   ggplot(aes(x=Plataforma)) + 
-  geom_bar(aes(fill=Genero), position = "fill")
+  geom_bar(aes(fill=Genero), position = "fill")+ylab("Frequência")
 
 quant %>%
   ggplot(aes(x=Plataforma)) + 
-  geom_bar(aes(fill=Genero), position = "dodge")
+  geom_bar(aes(fill=Genero), position = "dodge")+ylab("Frequência")+scale_fill_discrete(name="Gênero")
 
 
 #Genero
@@ -118,10 +124,10 @@ barplot(prop.table(table(base$sexo)),ylim = c(0, 1),main="Genero")
 summary(base$sexo)
 
 ggplot(base, aes(x=sexo))+
-  geom_bar(aes(fill="fl"))+
+  geom_bar(fill="#00bfc4")+
   theme_light()+
   theme(legend.position = "none")+
-  xlab("Gênero")+ylab("Frequência Relativa")
+  xlab("Gênero")+ylab("Frequência")
 
  
 #Cat idade por tempo
@@ -176,9 +182,15 @@ prop <- ifelse(base$requisitos=="Sim",1,0); mean(prop)
 prop.test(sum(prop), length(prop), alternative = "less", p = 0.5, correct = FALSE)
 
 ggplot(base, aes(x=requisitos))+
-  geom_bar(aes(fill="fl"))+
+  geom_bar(fill="#00bfc4")+
   theme_light()+
   theme(legend.position = "none")+
-  xlab("Já deixou de jogar por causa dos requisitos?")+ylab("Frequência Relativa")
+  xlab("Já deixou de jogar por causa dos requisitos?")+ylab("Frequência")
+
+ggplot(base, aes(x=requisitos))+
+  geom_(fill="#00bfc4")+
+  theme_light()+
+  theme(legend.position = "none")+
+  xlab("Já deixou de jogar por causa dos requisitos?")+ylab("Frequência")
 
 #
