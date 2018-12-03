@@ -83,12 +83,11 @@ Likert$divertimento = ordered(Likert$divertimento, levels = c('Baixa Importânci
                                                   'Alta Importância'))
 
 #aqui q eu troquei o nome das variaveis. se quiser ver o grafico como tava antes, não roda esse
-colnames(Likert)<- c("Divertimento","Jogabilidade", "Multiplayer", "Multiplayer Competitivo", "Tempo de Jogo", "Gráfico")
-
-Likert %<>%  as.data.frame()
-tabela_likert <- likert(Likert)
-
-plot(tabela_likert)+theme(legend.)
+names(Likert) <- c("Jogabilidade", "Tempo de Jogo", "Gráfico", "Multiplayer", "Multiplayer Competitivo","Divertimento") 
+Likert %<>% as.data.frame() 
+tabela_likert <- likert(Likert) 
+c <- c("#f2766d","#00bfc4","#7cae00") 
+plot(tabela_likert,color=c)+ ylab("Porcentagem")
 
 #Tipo de plataforma por genero jogo 
 
