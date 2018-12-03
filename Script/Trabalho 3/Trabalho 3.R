@@ -1,5 +1,7 @@
 require(ggplot2); require(dplyr); library(DescTools); require(likert); require(magrittr)
 require(rgdal); library(tidyr)
+install.packages("RColorBrewer")
+require(RColorBrewer)
 #SO PARA O MIZUNO NÃO RODA ISSO, SE VC RODAR ISSO O PROBLEMA É SEU!!!!!!!!!
 #Sys.setlocale("LC_ALL", "pt_BR.ISO8859-1")
 
@@ -75,9 +77,12 @@ Likert$divertimento = ordered(Likert$divertimento, levels = c('Baixa Importânci
                                                   'Média Importância',
                                                   'Alta Importância'))
 
+#aqui q eu troquei o nome das variaveis. se quiser ver o grafico como tava antes, não roda esse
+colnames(Likert)<- c("Divertimento","Jogabilidade", "Multiplayer", "Multiplayer Competitivo", "Tempo de Jogo", "Gráfico")
+
 Likert %<>%  as.data.frame()
 tabela_likert <- likert(Likert)
-plot(tabela_likert)
+plot(tabela_likert)+ ylab("Porcentagem")+scale_fill_discrete(name="Resposta")
 
 #Tipo de plataforma por genero jogo 
 
@@ -102,33 +107,46 @@ quant %>%
   ggplot(aes(x=Plataforma)) + 
   geom_bar(aes(fill=Genero), position = "fill")
 
+quant %>%
+  ggplot(aes(x=Plataforma)) + 
+  geom_bar(aes(fill=Genero), position = "dodge")
+
 
 #Genero
 
 barplot(prop.table(table(base$sexo)),ylim = c(0, 1),main="Genero")
 summary(base$sexo)
+
+ggplot(base, aes(x=sexo))+
+  geom_bar(aes(fill="fl"))+
+  theme_light()+
+  theme(legend.position = "none")+
+  xlab("Gênero")+ylab("Frequência Relativa")
+
  
 #Cat idade por tempo
 
 tab1_hora_cat <- table(base$idade.cat, base$horas_semana) %>% as.matrix(); tab1_hora_cat
 chisq.test(tab1_hora_cat,correct=FALSE)
 
+base$horas_semana=base$horas_semana%>%ordered(levels=c("menos de 2 horas","de 2 à 4 horas", "de 4 à 6 horas", "mais de 6 horas"))%>%as.factor()
+
 base %>%
   ggplot(aes(x=idade.cat)) + 
   geom_bar(aes(fill=horas_semana), position = "fill") + 
-  labs(title="Horas jogadas por categoria das idades", 
-       y="Frequencia relativa") 
-
+  ylab("Frequência Relativa")+theme_light()+xlab("Categoria de Idade")+
+  scale_fill_discrete(name="Horas Semanais", labels=c("Menos de 2 horas","De 2 à 4 horas", "De 4 à 6 horas", "Mais de 6 horas"))
+  
 #Cat idade por preço
 
 tab1_hora_cat <- table(base$idade.cat, base$preco_jogos) %>% as.matrix(); tab1_hora_cat
 chisq.test(tab1_hora_cat,correct=FALSE)
 
 base %>%
-  ggplot(aes(x=preco_jogos)) + 
-  geom_bar(aes(fill=idade.cat), position = "fill") + 
-  labs(title="Preco dos jogos por categoria de idades", 
-       y="Frequencia relativa") 
+  ggplot(aes(x=idade.cat)) + 
+  geom_bar(aes(fill=preco_jogos), position = "fill") + 
+  ylab("Frequência Relativa")+theme_light()+xlab("Categoria de Idade")+
+  scale_fill_discrete(name="Preço Justo")
 
 #Cart idade por + dinheiro
 
@@ -138,8 +156,8 @@ chisq.test(tab1_hora_cat,correct=FALSE)
 base %>%
   ggplot(aes(x=idade.cat)) + 
   geom_bar(aes(fill=dinheiro), position = "fill") + 
-  labs(title="Preco dos jogos por categoria das idades", 
-       y="Frequencia relativa") 
+  ylab("Frequência Relativa")+theme_light()+xlab("Categoria de Idade")+
+  scale_fill_discrete(name="Dinheiro")
 
 #Midias por preço
 
@@ -149,14 +167,18 @@ chisq.test(tab1_hora_cat,correct=FALSE)
 base %>%
   ggplot(aes(x=midia)) + 
   geom_bar(aes(fill=preco_jogos), position = "fill") + 
-  labs(title="Horas jogadas por categoria das idades", 
-       y="Frequencia relativa") 
+  ylab("Frequência Relativa")+theme_light()+xlab("Tipo de Midia")+
+  scale_fill_discrete(name="Preço Justo")
 
 #Requisitos minimos
 
 prop <- ifelse(base$requisitos=="Sim",1,0); mean(prop)
 prop.test(sum(prop), length(prop), alternative = "less", p = 0.5, correct = FALSE)
 
-barplot(prop.table(table(base$requisitos)),ylim = c(0, 1),main="Deixou de jogar por cuasa dos requisitos?")
+ggplot(base, aes(x=requisitos))+
+  geom_bar(aes(fill="fl"))+
+  theme_light()+
+  theme(legend.position = "none")+
+  xlab("Já deixou de jogar por causa dos requisitos?")+ylab("Frequência Relativa")
 
 #
