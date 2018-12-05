@@ -36,7 +36,7 @@ base2$estado <- toupper(base2$estado)
 mapa_br <- readOGR("Banco/Trabalho 3/UFEBRASIL.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
 mapa_br@data$NM_ESTADO <-  as.factor(mapa_br@data$NM_ESTADO)
 mapa_br@data <- inner_join(mapa_br@data,base2, by = c("NM_ESTADO" = "estado"))
-spplot(mapa_br, "n")
+spplot(mapa_br, "n",col.regions=grey.colors(500))
 
 q_1=quantile(mapa_br@data$n,0.25,na.rm = TRUE)
 q_2=quantile(mapa_br@data$n,0.5,na.rm=TRUE)
