@@ -1,7 +1,6 @@
 require(ggplot2); require(dplyr); library(DescTools); require(likert); require(magrittr)
-require(rgdal); library(tidyr)
-install.packages("RColorBrewer")
-require(RColorBrewer)
+require(rgdal); library(tidyr);require(scales)
+
 #SO PARA O MIZUNO NÃO RODA ISSO, SE VC RODAR ISSO O PROBLEMA É SEU!!!!!!!!!
 #Sys.setlocale("LC_ALL", "pt_BR.ISO8859-1")
 
@@ -17,10 +16,17 @@ ggplot(base, aes(x = sexo, y = idade)) + geom_boxplot(fill="#00bfc4") + ylab("Id
 summary(base$estado)
 length(base$estado)
 
+#idade cat
+tb<-round(prop.table(table(base$idade.cat)),2)
+dt<-as.data.frame(tb)
 
+pizza<-ggplot(dt, aes(x="",y=Freq, fill=Var1))+
+  geom_bar(width = 1, stat="identity")+
+  coord_polar("y")
 
-#idade
-hist(base$idade)
+pizza+scale_fill_discrete(name="Idade Categórica")+theme_void()+ 
+  geom_text(aes(y = c(0.85,0.45,0.12),
+                label = percent(Freq,accuracy=1)), data = dt, size=4.6)+ylab("")+xlab("")
 
 #Verificando Homocedacidade
 LeveneTest(base$idade, base$sexo, center = "mean")
