@@ -42,23 +42,26 @@ base2$estado <- toupper(base2$estado)
 mapa_br <- readOGR("Banco/Trabalho 3/UFEBRASIL.shp",encoding ="UTF-8",use_iconv=TRUE, verbose=FALSE)
 mapa_br@data$NM_ESTADO <-  as.factor(mapa_br@data$NM_ESTADO)
 mapa_br@data <- inner_join(mapa_br@data,base2, by = c("NM_ESTADO" = "estado"))
+
 spplot(mapa_br, "n",col.regions=grey.colors(500))
 
 q_1=quantile(mapa_br@data$n,0.25,na.rm = TRUE)
 q_2=quantile(mapa_br@data$n,0.5,na.rm=TRUE)
 q_3=quantile(mapa_br@data$n,0.75,na.rm=TRUE)
-q_4=quantile(mapa_br@data$n,1,na.rm=TRUE)
-intervalo_quartis <- c(0,q_1,q_2,q_3,q_4)
+q_4=quantile(mapa_br@data$n,0.85,na.rm=TRUE)
+q_5=quantile(mapa_br@data$n,0.98, na.rm=TRUE)
+q_6=quantile(mapa_br@data$n,1, na.rm=TRUE)
+intervalo_quartis <- c(0,q_1,q_2,q_3,q_4,q_5,q_6)
 
 #Mapa falta melhorar
 cortes_1t<-cut(mapa_br@data$n,intervalo_quartis,include.lowest=TRUE)
 niveis_1t<-levels(cortes_1t)
-rw.colors=colorRampPalette(c("pink","red"))
+rw.colors=colorRampPalette(c("#b7e6e8","#016d70"))
 cores_1t<-rw.colors(length(niveis_1t))
 levels(cortes_1t)<-cores_1t
 
 plot(mapa_br,lwd=.1,axes=FALSE,col=as.character(cortes_1t))
-legend("bottomright",niveis_1t,fill=cores_1t,bty="n",cex=0.7, inset = c(.1,0.28))
+legend("bottomright",niveis_1t,fill=cores_1t,bty="n",cex=0.7, inset = c(0.2,0.2))
 
 
 #Escala Likert
