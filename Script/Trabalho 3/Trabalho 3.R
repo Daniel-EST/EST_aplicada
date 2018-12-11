@@ -18,12 +18,18 @@ summary(base$estado)
 length(base$estado)
 
 
+
+#idade
+hist(base$idade)
+
 #Verificando Homocedacidade
 LeveneTest(base$idade, base$sexo, center = "mean")
 
 comparacao = aov(idade ~ sexo, data = base)
 summary(comparacao)
 PostHocTest(comparacao, method = "bonferroni")
+
+mean(base$idade[base$sexo=="Masculino"])
 
 #Estados
 #Acho melhor passa um summary e fazer um tabela
