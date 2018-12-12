@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.5.13)  4 DEC 2018 10:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.5.13)  11 DEC 2018 23:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1237,7 +1237,20 @@ Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-(./Relatorio.aux)
+(./Relatorio.aux
+
+LaTeX Warning: Label `table:2' multiply defined.
+
+
+LaTeX Warning: Label `table:2' multiply defined.
+
+
+LaTeX Warning: Label `table:2' multiply defined.
+
+
+LaTeX Warning: Label `table:2' multiply defined.
+
+)
 \openout1 = `Relatorio.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
@@ -1393,81 +1406,110 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--81
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 84.
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--84
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 84.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 91.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 101.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 104.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 104.
- [2]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 118.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 119.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 153.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 154.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 165.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 165.
- [3]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 168.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
 
-Overfull \hbox (9.68245pt too wide) in paragraph at lines 205--205
+Underfull \hbox (badness 10000) in paragraph at lines 93--95
+
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 103.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 106.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 106.
+[2]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 113.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 130.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 136.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 137.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 151.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 151.
+ [3]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 265.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 266.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 270.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 270.
+[4]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 280.
+
+Overfull \hbox (9.68245pt too wide) in paragraph at lines 317--317
 |\T1/cmr/m/n/10.95 Ensino Fun-da-men-tal - Completo| 
  []
 
-
-Overfull \hbox (2.14072pt too wide) in paragraph at lines 222--222
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 317.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 317.
+[5]
+Overfull \hbox (2.14072pt too wide) in paragraph at lines 334--334
 |\T1/cmr/m/n/10.95 Ação e Aventura| 
  []
 
 
-Overfull \hbox (2.6416pt too wide) in paragraph at lines 242--242
+Overfull \hbox (2.6416pt too wide) in paragraph at lines 354--354
 []|\T1/cmr/m/n/10.95 PC (Steam, Ori-gin, Uplay, etc)| 
  []
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 256.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 256.
-[4]
-Overfull \hbox (18.51862pt too wide) in paragraph at lines 274--274
+
+Overfull \hbox (18.51862pt too wide) in paragraph at lines 386--386
 |\T1/cmr/m/n/10.95 Aprimoramentos (XP Bo-ost, Gold
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 322.
+(babel)             in language  on input line 393.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 322.
-[5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 322.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 322.
+(babel)             in language  on input line 393.
+[6]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 434.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 434.
+ [7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 434.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 434.
  (./Relatorio.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 322.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 322.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 434.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 434.
 Package rerunfilecheck Info: File `Relatorio.out' has not changed.
-(rerunfilecheck)             Checksum: 87F1C2063B381CEC45C48D36B007D599;491.
+(rerunfilecheck)             Checksum: 78AF0AE490C2C907B584CCB2AB398A24;552.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 27266 strings out of 492649
- 521116 string characters out of 6129622
- 620253 words of memory out of 5000000
- 30689 multiletter control sequences out of 15000+600000
+ 27274 strings out of 492649
+ 521176 string characters out of 6129622
+ 620246 words of memory out of 5000000
+ 30690 multiletter control sequences out of 15000+600000
  544098 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,14n,82p,10360b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,14n,82p,10360b,758s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
@@ -1480,10 +1522,10 @@ texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texl
 ive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texliv
 e/2018/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on Relatorio.pdf (5 pages, 183292 bytes).
+Output written on Relatorio.pdf (7 pages, 191522 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 148 compressed objects within 2 object streams
- 47 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 188 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
