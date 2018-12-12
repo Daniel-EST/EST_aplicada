@@ -6,6 +6,6 @@
 \contentsline {section}{\numberline {4}Conclus\IeC {\~a}o}{3}{section.4}
 \contentsline {section}{\numberline {5}Ap\IeC {\^e}ndice}{4}{section.5}
 \contentsline {subsection}{\numberline {5.1}Tabelas}{4}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Gr\IeC {\'a}ficos}{5}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Gloss\IeC {\'a}rio}{5}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Formul\IeC {\'a}rio}{5}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.2}Gr\IeC {\'a}ficos}{6}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Gloss\IeC {\'a}rio}{8}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Formul\IeC {\'a}rio}{9}{subsection.5.4}
